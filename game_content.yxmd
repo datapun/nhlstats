@@ -1,0 +1,470 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>players_gamelog.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teams_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_person_fullName" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_person_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_position_code" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="gameNo" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="date" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="game_content_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="game_gamePk" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="game_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="isHome" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="isOT" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="isWin" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="season" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_assists" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_blocked" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_evenTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_faceOffPct" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_games" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_gameWinningGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_goals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_hits" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_overTimeGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_penaltyMinutes" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_pim" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_plusMinus" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_points" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayPoints" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shifts" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedPoints" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shotPct" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shots" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_timeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="team_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="team_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="team_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="Tile_Num" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+            <Field name="Tile_SequenceNum" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\players_gamelog.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="162" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="teams_id" selected="True" />
+            <SelectField field="game_content_link" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="294" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[teams_id] = "23"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>teams_id</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 23:39:12</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>23</Operand>
+              <StartDate>2019-12-01 23:39:12</StartDate>
+              <EndDate>2019-12-01 23:39:12</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[teams_id] = "23"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings>
+        <Position x="414" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Ranges">5d</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="SelectRecords.yxmc" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="606" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>content_url</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="teams_id" selected="False" />
+              <Field name="game_content_link" selected="False" />
+              <Field name="content_url" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="teams_id" selected="False" />
+              <Field name="game_content_link" selected="False" />
+              <Field name="content_url" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <Password />
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="702" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="510" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'https://statsapi.web.nhl.com' + [game_content_link]" field="content_url" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[content_url = 'https://statsapi.web.nhl.com' + [game_content_link]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="481" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>JSON_Name</RootName>
+          <Delimeters value="." />
+          <NumFields value="9" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="378" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="game_content_link" selected="False" />
+            <SelectField field="content_url" selected="False" />
+            <SelectField field="DownloadHeaders" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="584" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>JSON_Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 23:43:08</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2019-12-01 23:43:08</StartDate>
+              <EndDate>2019-12-01 23:43:08</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="688" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[JSON_Name1]+' '+[JSON_Name2]+' '+[JSON_Name3]+' '+[JSON_Name4]+' '+[JSON_Name5]&#xA;+' '+[JSON_Name6]+' '+[JSON_Name7]+' '+[JSON_Name8]+' '+[JSON_Name9]" field="col_name" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>col_name = [JSON_Name1]+' '+[JSON_Name2]+' '+[JSON_Name3]+' '+[JSON_Name4]+' '+[...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings>
+        <Position x="791" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"col_name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="894" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([col_name], ' ','_')" field="col_name" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[col_name = Replace([col_name], ' ','_')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output26" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>game_content</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

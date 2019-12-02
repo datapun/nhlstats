@@ -1,0 +1,912 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="42" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\list_players.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>list_players.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teams_id" source="CrossTab:Group:Concat:" type="Int64" />
+            <Field name="teams_name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="CrossTab:Group:Concat:" type="Int64" />
+            <Field name="roster_jerseyNumber" size="2048" source="CrossTab:Header:col_name:roster_jerseyNumber:Concat:" type="V_WString" />
+            <Field name="roster_person_fullName" size="2048" source="CrossTab:Header:col_name:roster_person_fullName:Concat:" type="V_WString" />
+            <Field name="roster_person_id" size="2048" source="CrossTab:Header:col_name:roster_person_id:Concat:" type="V_WString" />
+            <Field name="roster_person_link" size="2048" source="CrossTab:Header:col_name:roster_person_link:Concat:" type="V_WString" />
+            <Field name="roster_position_abbreviation" size="2048" source="CrossTab:Header:col_name:roster_position_abbreviation:Concat:" type="V_WString" />
+            <Field name="roster_position_code" size="2048" source="CrossTab:Header:col_name:roster_position_code:Concat:" type="V_WString" />
+            <Field name="roster_position_name" size="2048" source="CrossTab:Header:col_name:roster_position_name:Concat:" type="V_WString" />
+            <Field name="roster_position_type" size="2048" source="CrossTab:Header:col_name:roster_position_type:Concat:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="162" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="teams_name" selected="True" />
+            <SelectField field="roster_person_fullName" selected="True" rename="PlayerName" />
+            <SelectField field="roster_person_link" selected="True" />
+            <SelectField field="roster_position_code" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="282" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'https://statsapi.web.nhl.com'&#xA;+[roster_person_link]+'/stats?stats=statsSingleSeason&amp;season=20182019'" field="player_season_stats_URL" size="1073741823" type="V_WString" />
+            <FormulaField expression="Right([roster_person_link],Length([roster_person_link])-&#xA;(FindString([roster_person_link], 'people/')&#xA;+Length('people/')))" field="player_id" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>player_season_stats_URL = 'https://statsapi.web.nhl.com'
++[roster_person_link]+'...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="474" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>player_season_stats_URL</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="teams_name" selected="False" />
+              <Field name="PlayerName" selected="False" />
+              <Field name="roster_person_link" selected="False" />
+              <Field name="roster_position_code" selected="False" />
+              <Field name="player_season_stats_URL" selected="False" />
+              <Field name="player_id" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="teams_name" selected="False" />
+              <Field name="PlayerName" selected="False" />
+              <Field name="roster_person_link" selected="False" />
+              <Field name="roster_position_code" selected="False" />
+              <Field name="player_season_stats_URL" selected="False" />
+              <Field name="player_id" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <Password />
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="90" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="282" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>
+          </RootName>
+          <Delimeters value="." />
+          <NumFields value="6" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="186" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="roster_person_link" selected="False" />
+            <SelectField field="player_season_stats_URL" selected="False" />
+            <SelectField field="DownloadHeaders" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="474" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="JSON_Name" selected="False" />
+            <SelectField field="1" selected="False" />
+            <SelectField field="2" selected="False" />
+            <SelectField field="3" selected="False" />
+            <SelectField field="4" selected="False" />
+            <SelectField field="5" selected="False" />
+            <SelectField field="6" selected="True" rename="col_name" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="966" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="teams_name" />
+            <Field field="PlayerName" />
+            <Field field="roster_position_code" />
+            <Field field="player_id" />
+          </GroupFields>
+          <HeaderField field="col_name" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2050" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teams_name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="PlayerName" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="roster_position_code" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="player_id" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="evenSaves" size="2050" source="CrossTab:Header:col_name:evenSaves:Concat:" type="V_WString" />
+            <Field name="evenShots" size="2050" source="CrossTab:Header:col_name:evenShots:Concat:" type="V_WString" />
+            <Field name="evenStrengthSavePercentage" size="2050" source="CrossTab:Header:col_name:evenStrengthSavePercentage:Concat:" type="V_WString" />
+            <Field name="games" size="2050" source="CrossTab:Header:col_name:games:Concat:" type="V_WString" />
+            <Field name="gamesStarted" size="2050" source="CrossTab:Header:col_name:gamesStarted:Concat:" type="V_WString" />
+            <Field name="goalAgainstAverage" size="2050" source="CrossTab:Header:col_name:goalAgainstAverage:Concat:" type="V_WString" />
+            <Field name="goalsAgainst" size="2050" source="CrossTab:Header:col_name:goalsAgainst:Concat:" type="V_WString" />
+            <Field name="losses" size="2050" source="CrossTab:Header:col_name:losses:Concat:" type="V_WString" />
+            <Field name="ot" size="2050" source="CrossTab:Header:col_name:ot:Concat:" type="V_WString" />
+            <Field name="powerPlaySavePercentage" size="2050" source="CrossTab:Header:col_name:powerPlaySavePercentage:Concat:" type="V_WString" />
+            <Field name="powerPlaySaves" size="2050" source="CrossTab:Header:col_name:powerPlaySaves:Concat:" type="V_WString" />
+            <Field name="powerPlayShots" size="2050" source="CrossTab:Header:col_name:powerPlayShots:Concat:" type="V_WString" />
+            <Field name="savePercentage" size="2050" source="CrossTab:Header:col_name:savePercentage:Concat:" type="V_WString" />
+            <Field name="saves" size="2050" source="CrossTab:Header:col_name:saves:Concat:" type="V_WString" />
+            <Field name="season" size="2050" source="CrossTab:Header:col_name:season:Concat:" type="V_WString" />
+            <Field name="shortHandedSavePercentage" size="2050" source="CrossTab:Header:col_name:shortHandedSavePercentage:Concat:" type="V_WString" />
+            <Field name="shortHandedSaves" size="2050" source="CrossTab:Header:col_name:shortHandedSaves:Concat:" type="V_WString" />
+            <Field name="shortHandedShots" size="2050" source="CrossTab:Header:col_name:shortHandedShots:Concat:" type="V_WString" />
+            <Field name="shotsAgainst" size="2050" source="CrossTab:Header:col_name:shotsAgainst:Concat:" type="V_WString" />
+            <Field name="shutouts" size="2050" source="CrossTab:Header:col_name:shutouts:Concat:" type="V_WString" />
+            <Field name="ties" size="2050" source="CrossTab:Header:col_name:ties:Concat:" type="V_WString" />
+            <Field name="timeOnIce" size="2050" source="CrossTab:Header:col_name:timeOnIce:Concat:" type="V_WString" />
+            <Field name="timeOnIcePerGame" size="2050" source="CrossTab:Header:col_name:timeOnIcePerGame:Concat:" type="V_WString" />
+            <Field name="wins" size="2050" source="CrossTab:Header:col_name:wins:Concat:" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="teams_name" order="Asc" />
+            <Field field="PlayerName" order="Asc" />
+            <Field field="roster_position_code" order="Asc" />
+            <Field field="player_id" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="366" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'
+and [JSON_ValueString]!='statssingleseason'</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>JSON_Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 19:19:08</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>copyright</Operand>
+              <StartDate>2019-12-01 19:19:08</StartDate>
+              <EndDate>2019-12-01 19:19:08</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'
+and [JSON_ValueString]!='stat...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="846" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[roster_position_code] = "G"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>roster_position_code</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 19:47:20</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2019-12-01 19:47:20</StartDate>
+              <EndDate>2019-12-01 19:47:20</EndDate>
+              <Operand>G</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[roster_position_code] = "G"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="966" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="teams_name" />
+            <Field field="PlayerName" />
+            <Field field="roster_position_code" />
+            <Field field="player_id" />
+          </GroupFields>
+          <HeaderField field="col_name" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teams_name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="PlayerName" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="roster_position_code" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="player_id" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="assists" size="2048" source="CrossTab:Header:col_name:assists:Concat:" type="V_WString" />
+            <Field name="blocked" size="2048" source="CrossTab:Header:col_name:blocked:Concat:" type="V_WString" />
+            <Field name="evenTimeOnIce" size="2048" source="CrossTab:Header:col_name:evenTimeOnIce:Concat:" type="V_WString" />
+            <Field name="evenTimeOnIcePerGame" size="2048" source="CrossTab:Header:col_name:evenTimeOnIcePerGame:Concat:" type="V_WString" />
+            <Field name="faceOffPct" size="2048" source="CrossTab:Header:col_name:faceOffPct:Concat:" type="V_WString" />
+            <Field name="games" size="2048" source="CrossTab:Header:col_name:games:Concat:" type="V_WString" />
+            <Field name="gameWinningGoals" size="2048" source="CrossTab:Header:col_name:gameWinningGoals:Concat:" type="V_WString" />
+            <Field name="goals" size="2048" source="CrossTab:Header:col_name:goals:Concat:" type="V_WString" />
+            <Field name="hits" size="2048" source="CrossTab:Header:col_name:hits:Concat:" type="V_WString" />
+            <Field name="overTimeGoals" size="2048" source="CrossTab:Header:col_name:overTimeGoals:Concat:" type="V_WString" />
+            <Field name="penaltyMinutes" size="2048" source="CrossTab:Header:col_name:penaltyMinutes:Concat:" type="V_WString" />
+            <Field name="pim" size="2048" source="CrossTab:Header:col_name:pim:Concat:" type="V_WString" />
+            <Field name="plusMinus" size="2048" source="CrossTab:Header:col_name:plusMinus:Concat:" type="V_WString" />
+            <Field name="points" size="2048" source="CrossTab:Header:col_name:points:Concat:" type="V_WString" />
+            <Field name="powerPlayGoals" size="2048" source="CrossTab:Header:col_name:powerPlayGoals:Concat:" type="V_WString" />
+            <Field name="powerPlayPoints" size="2048" source="CrossTab:Header:col_name:powerPlayPoints:Concat:" type="V_WString" />
+            <Field name="powerPlayTimeOnIce" size="2048" source="CrossTab:Header:col_name:powerPlayTimeOnIce:Concat:" type="V_WString" />
+            <Field name="powerPlayTimeOnIcePerGame" size="2048" source="CrossTab:Header:col_name:powerPlayTimeOnIcePerGame:Concat:" type="V_WString" />
+            <Field name="season" size="2048" source="CrossTab:Header:col_name:season:Concat:" type="V_WString" />
+            <Field name="shifts" size="2048" source="CrossTab:Header:col_name:shifts:Concat:" type="V_WString" />
+            <Field name="shortHandedGoals" size="2048" source="CrossTab:Header:col_name:shortHandedGoals:Concat:" type="V_WString" />
+            <Field name="shortHandedPoints" size="2048" source="CrossTab:Header:col_name:shortHandedPoints:Concat:" type="V_WString" />
+            <Field name="shortHandedTimeOnIce" size="2048" source="CrossTab:Header:col_name:shortHandedTimeOnIce:Concat:" type="V_WString" />
+            <Field name="shortHandedTimeOnIcePerGame" size="2048" source="CrossTab:Header:col_name:shortHandedTimeOnIcePerGame:Concat:" type="V_WString" />
+            <Field name="shotPct" size="2048" source="CrossTab:Header:col_name:shotPct:Concat:" type="V_WString" />
+            <Field name="shots" size="2048" source="CrossTab:Header:col_name:shots:Concat:" type="V_WString" />
+            <Field name="timeOnIce" size="2048" source="CrossTab:Header:col_name:timeOnIce:Concat:" type="V_WString" />
+            <Field name="timeOnIcePerGame" size="2048" source="CrossTab:Header:col_name:timeOnIcePerGame:Concat:" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="teams_name" order="Asc" />
+            <Field field="PlayerName" order="Asc" />
+            <Field field="roster_position_code" order="Asc" />
+            <Field field="player_id" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="1050" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="teams_name" selected="True" />
+            <Field field="PlayerName" selected="True" />
+            <Field field="roster_position_code" selected="True" />
+            <Field field="player_id" selected="True" />
+            <Field field="stats_splits_season" selected="True" />
+            <Field field="stats_splits_stat_evenSaves" selected="True" />
+            <Field field="stats_splits_stat_evenShots" selected="True" />
+            <Field field="stats_splits_stat_evenStrengthSavePercentage" selected="True" />
+            <Field field="stats_splits_stat_games" selected="True" />
+            <Field field="stats_splits_stat_gamesStarted" selected="True" />
+            <Field field="stats_splits_stat_goalAgainstAverage" selected="True" />
+            <Field field="stats_splits_stat_goalsAgainst" selected="True" />
+            <Field field="stats_splits_stat_losses" selected="True" />
+            <Field field="stats_splits_stat_ot" selected="True" />
+            <Field field="stats_splits_stat_powerPlaySavePercentage" selected="True" />
+            <Field field="stats_splits_stat_powerPlaySaves" selected="True" />
+            <Field field="stats_splits_stat_powerPlayShots" selected="True" />
+            <Field field="stats_splits_stat_savePercentage" selected="True" />
+            <Field field="stats_splits_stat_saves" selected="True" />
+            <Field field="stats_splits_stat_shortHandedSavePercentage" selected="True" />
+            <Field field="stats_splits_stat_shortHandedSaves" selected="True" />
+            <Field field="stats_splits_stat_shortHandedShots" selected="True" />
+            <Field field="stats_splits_stat_shotsAgainst" selected="True" />
+            <Field field="stats_splits_stat_shutouts" selected="True" />
+            <Field field="stats_splits_stat_ties" selected="True" />
+            <Field field="stats_splits_stat_timeOnIce" selected="True" />
+            <Field field="stats_splits_stat_timeOnIcePerGame" selected="True" />
+            <Field field="stats_splits_stat_wins" selected="True" />
+            <Field field="stats_type" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teams_name" size="21" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="PlayerName" size="19" source="CrossTab:Group:Concat:" type="V_String" />
+            <Field name="roster_position_code" size="1" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="player_id" source="CrossTab:Group:Concat:" type="Int32" />
+            <Field name="evenSaves" source="CrossTab:Header:col_name:evenSaves:Concat:" type="Int16" />
+            <Field name="evenShots" source="CrossTab:Header:col_name:evenShots:Concat:" type="Int16" />
+            <Field name="evenStrengthSavePercentage" source="CrossTab:Header:col_name:evenStrengthSavePercentage:Concat:" type="Double" />
+            <Field name="games" source="CrossTab:Header:col_name:games:Concat:" type="Byte" />
+            <Field name="gamesStarted" source="CrossTab:Header:col_name:gamesStarted:Concat:" type="Byte" />
+            <Field name="goalAgainstAverage" source="CrossTab:Header:col_name:goalAgainstAverage:Concat:" type="Double" />
+            <Field name="goalsAgainst" source="CrossTab:Header:col_name:goalsAgainst:Concat:" type="Byte" />
+            <Field name="losses" source="CrossTab:Header:col_name:losses:Concat:" type="Byte" />
+            <Field name="ot" source="CrossTab:Header:col_name:ot:Concat:" type="Byte" />
+            <Field name="powerPlaySavePercentage" size="16" source="CrossTab:Header:col_name:powerPlaySavePercentage:Concat:" type="String" />
+            <Field name="powerPlaySaves" source="CrossTab:Header:col_name:powerPlaySaves:Concat:" type="Int16" />
+            <Field name="powerPlayShots" source="CrossTab:Header:col_name:powerPlayShots:Concat:" type="Int16" />
+            <Field name="savePercentage" source="CrossTab:Header:col_name:savePercentage:Concat:" type="Double" />
+            <Field name="saves" source="CrossTab:Header:col_name:saves:Concat:" type="Int16" />
+            <Field name="season" source="CrossTab:Header:col_name:season:Concat:" type="Int32" />
+            <Field name="shortHandedSavePercentage" size="16" source="CrossTab:Header:col_name:shortHandedSavePercentage:Concat:" type="V_String" />
+            <Field name="shortHandedSaves" source="CrossTab:Header:col_name:shortHandedSaves:Concat:" type="Byte" />
+            <Field name="shortHandedShots" source="CrossTab:Header:col_name:shortHandedShots:Concat:" type="Byte" />
+            <Field name="shotsAgainst" source="CrossTab:Header:col_name:shotsAgainst:Concat:" type="Int16" />
+            <Field name="shutouts" source="CrossTab:Header:col_name:shutouts:Concat:" type="Byte" />
+            <Field name="ties" source="CrossTab:Header:col_name:ties:Concat:" type="Byte" />
+            <Field name="timeOnIce" size="7" source="CrossTab:Header:col_name:timeOnIce:Concat:" type="String" />
+            <Field name="timeOnIcePerGame" size="5" source="CrossTab:Header:col_name:timeOnIcePerGame:Concat:" type="String" />
+            <Field name="wins" source="CrossTab:Header:col_name:wins:Concat:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="1158" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="teams_name" selected="True" />
+            <Field field="PlayerName" selected="True" />
+            <Field field="roster_position_code" selected="True" />
+            <Field field="player_id" selected="True" />
+            <Field field="stats_splits_season" selected="True" />
+            <Field field="stats_splits_stat_assists" selected="True" />
+            <Field field="stats_splits_stat_blocked" selected="True" />
+            <Field field="stats_splits_stat_evenTimeOnIce" selected="True" />
+            <Field field="stats_splits_stat_evenTimeOnIcePerGame" selected="True" />
+            <Field field="stats_splits_stat_faceOffPct" selected="True" />
+            <Field field="stats_splits_stat_games" selected="True" />
+            <Field field="stats_splits_stat_gameWinningGoals" selected="True" />
+            <Field field="stats_splits_stat_goals" selected="True" />
+            <Field field="stats_splits_stat_hits" selected="True" />
+            <Field field="stats_splits_stat_overTimeGoals" selected="True" />
+            <Field field="stats_splits_stat_penaltyMinutes" selected="True" />
+            <Field field="stats_splits_stat_pim" selected="True" />
+            <Field field="stats_splits_stat_plusMinus" selected="True" />
+            <Field field="stats_splits_stat_points" selected="True" />
+            <Field field="stats_splits_stat_powerPlayGoals" selected="True" />
+            <Field field="stats_splits_stat_powerPlayPoints" selected="True" />
+            <Field field="stats_splits_stat_powerPlayTimeOnIce" selected="True" />
+            <Field field="stats_splits_stat_powerPlayTimeOnIcePerGame" selected="True" />
+            <Field field="stats_splits_stat_shifts" selected="True" />
+            <Field field="stats_splits_stat_shortHandedGoals" selected="True" />
+            <Field field="stats_splits_stat_shortHandedPoints" selected="True" />
+            <Field field="stats_splits_stat_shortHandedTimeOnIce" selected="True" />
+            <Field field="stats_splits_stat_shortHandedTimeOnIcePerGame" selected="True" />
+            <Field field="stats_splits_stat_shotPct" selected="True" />
+            <Field field="stats_splits_stat_shots" selected="True" />
+            <Field field="stats_splits_stat_timeOnIce" selected="True" />
+            <Field field="stats_splits_stat_timeOnIcePerGame" selected="True" />
+            <Field field="stats_type" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teams_name" size="21" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="PlayerName" size="24" source="CrossTab:Group:Concat:" type="V_String" />
+            <Field name="roster_position_code" size="1" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="player_id" source="CrossTab:Group:Concat:" type="Int32" />
+            <Field name="assists" source="CrossTab:Header:col_name:assists:Concat:" type="Byte" />
+            <Field name="blocked" source="CrossTab:Header:col_name:blocked:Concat:" type="Byte" />
+            <Field name="evenTimeOnIce" size="7" source="CrossTab:Header:col_name:evenTimeOnIce:Concat:" type="String" />
+            <Field name="evenTimeOnIcePerGame" size="5" source="CrossTab:Header:col_name:evenTimeOnIcePerGame:Concat:" type="String" />
+            <Field name="faceOffPct" source="CrossTab:Header:col_name:faceOffPct:Concat:" type="Double" />
+            <Field name="games" source="CrossTab:Header:col_name:games:Concat:" type="Byte" />
+            <Field name="gameWinningGoals" source="CrossTab:Header:col_name:gameWinningGoals:Concat:" type="Byte" />
+            <Field name="goals" source="CrossTab:Header:col_name:goals:Concat:" type="Byte" />
+            <Field name="hits" source="CrossTab:Header:col_name:hits:Concat:" type="Int16" />
+            <Field name="overTimeGoals" source="CrossTab:Header:col_name:overTimeGoals:Concat:" type="Byte" />
+            <Field name="penaltyMinutes" source="CrossTab:Header:col_name:penaltyMinutes:Concat:" type="Byte" />
+            <Field name="pim" source="CrossTab:Header:col_name:pim:Concat:" type="Byte" />
+            <Field name="plusMinus" source="CrossTab:Header:col_name:plusMinus:Concat:" type="Int16" />
+            <Field name="points" source="CrossTab:Header:col_name:points:Concat:" type="Byte" />
+            <Field name="powerPlayGoals" source="CrossTab:Header:col_name:powerPlayGoals:Concat:" type="Byte" />
+            <Field name="powerPlayPoints" source="CrossTab:Header:col_name:powerPlayPoints:Concat:" type="Byte" />
+            <Field name="powerPlayTimeOnIce" size="6" source="CrossTab:Header:col_name:powerPlayTimeOnIce:Concat:" type="String" />
+            <Field name="powerPlayTimeOnIcePerGame" size="5" source="CrossTab:Header:col_name:powerPlayTimeOnIcePerGame:Concat:" type="String" />
+            <Field name="season" source="CrossTab:Header:col_name:season:Concat:" type="Int32" />
+            <Field name="shifts" source="CrossTab:Header:col_name:shifts:Concat:" type="Int16" />
+            <Field name="shortHandedGoals" source="CrossTab:Header:col_name:shortHandedGoals:Concat:" type="Byte" />
+            <Field name="shortHandedPoints" source="CrossTab:Header:col_name:shortHandedPoints:Concat:" type="Byte" />
+            <Field name="shortHandedTimeOnIce" size="6" source="CrossTab:Header:col_name:shortHandedTimeOnIce:Concat:" type="String" />
+            <Field name="shortHandedTimeOnIcePerGame" size="5" source="CrossTab:Header:col_name:shortHandedTimeOnIcePerGame:Concat:" type="String" />
+            <Field name="shotPct" source="CrossTab:Header:col_name:shotPct:Concat:" type="Double" />
+            <Field name="shots" source="CrossTab:Header:col_name:shots:Concat:" type="Int16" />
+            <Field name="timeOnIce" size="7" source="CrossTab:Header:col_name:timeOnIce:Concat:" type="String" />
+            <Field name="timeOnIcePerGame" size="5" source="CrossTab:Header:col_name:timeOnIcePerGame:Concat:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1194" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1254" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1062" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsEmpty([season])</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotEmpty</Operator>
+            <Field>season</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 23:06:52</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2019-12-01 23:06:52</StartDate>
+              <EndDate>2019-12-01 23:06:52</EndDate>
+              <Operand>
+              </Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsEmpty([season])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1386" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\goalie_stats.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>65001</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="True" />
+          <MultiFileType>Suffix</MultiFileType>
+          <MultiFileField>fileSuffix</MultiFileField>
+          <KeepField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>goalie_stats.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1446" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\player_stats.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>65001</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="True" />
+          <MultiFileType>Suffix</MultiFileType>
+          <MultiFileField>fileSuffix</MultiFileField>
+          <KeepField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>player_stats.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1350" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'_'+ToString([season])" field="fileSuffix" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[fileSuffix = '_'+ToString([season])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1290" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'_'+ToString([season])" field="fileSuffix" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[fileSuffix = '_'+ToString([season])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="642" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IIF(IsNull([col_name]),'season',[col_name])" field="col_name" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[col_name = IIF(IsNull([col_name]),'season',[col_name])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="True" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="False" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="True" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>nhl_player_season_stats</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
