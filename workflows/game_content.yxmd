@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="42" y="54" />
+        <Position x="78" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -13,7 +13,7 @@
             <CodePage>65001</CodePage>
             <Delimeter>,</Delimeter>
             <IgnoreErrors>False</IgnoreErrors>
-            <FieldLen>254</FieldLen>
+            <FieldLen>2000</FieldLen>
             <AllowShareWrite>False</AllowShareWrite>
             <HeaderRow>True</HeaderRow>
             <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
@@ -30,51 +30,51 @@
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="roster_person_fullName" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="roster_person_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="roster_position_code" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="gameNo" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="date" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="game_content_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="game_gamePk" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="game_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="isHome" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="isOT" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="isWin" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="opponent_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="opponent_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="opponent_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="season" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_assists" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_blocked" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_evenTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_faceOffPct" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_games" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_gameWinningGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_goals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_hits" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_overTimeGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_penaltyMinutes" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_pim" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_plusMinus" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_points" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_powerPlayGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_powerPlayPoints" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_powerPlayTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_shifts" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_shortHandedGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_shortHandedPoints" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_shortHandedTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_shotPct" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_shots" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="stat_timeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="team_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="team_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="team_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="Tile_Num" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
-            <Field name="Tile_SequenceNum" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="teams_id" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_person_fullName" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_person_id" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_position_code" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="gameNo" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="date" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="game_content_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="game_gamePk" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="game_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="isHome" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="isOT" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="isWin" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_id" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_name" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="season" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_assists" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_blocked" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_evenTimeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_faceOffPct" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_games" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_gameWinningGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_goals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_hits" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_overTimeGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_penaltyMinutes" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_pim" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_plusMinus" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_points" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayPoints" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayTimeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shifts" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedPoints" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedTimeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shotPct" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shots" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_timeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="team_id" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="team_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="team_name" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="gameID" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="Tile_Num" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="Tile_SequenceNum" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -82,15 +82,16 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="150" y="54" />
+        <Position x="270" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
-            <SelectField field="teams_id" selected="True" />
+            <SelectField field="teams_id" selected="True" rename="teamID1" />
             <SelectField field="game_content_link" selected="True" />
+            <SelectField field="opponent_id" selected="True" rename="teamID2" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
@@ -104,12 +105,12 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="282" y="54" />
+        <Position x="366" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[teams_id] = "23"</Expression>
-          <Mode>Simple</Mode>
+          <Expression>[teamID1]='23' or [teamID2]='23'</Expression>
+          <Mode>Custom</Mode>
           <Simple>
             <Operator>=</Operator>
             <Field>teams_id</Field>
@@ -120,7 +121,7 @@
               <PeriodType>
               </PeriodType>
               <PeriodCount>0</PeriodCount>
-              <Operand>23</Operand>
+              <Operand>10</Operand>
               <StartDate>2019-12-01 23:39:12</StartDate>
               <EndDate>2019-12-01 23:39:12</EndDate>
             </Operands>
@@ -128,36 +129,15 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>[teams_id] = "23"</DefaultAnnotationText>
+          <DefaultAnnotationText>[teamID1]='23' or [teamID2]='23'</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
-    <Node ToolID="4">
-      <GuiSettings>
-        <Position x="402" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Value name="Ranges">1599
-241
-14</Value>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
-      </Properties>
-      <EngineSettings Macro="SelectRecords.yxmc" />
-    </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-        <Position x="594" y="54" />
+        <Position x="630" y="99.99998" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -200,7 +180,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-        <Position x="690" y="54" />
+        <Position x="726" y="99.99998" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -218,7 +198,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="498" y="54" />
+        <Position x="534" y="99.99998" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -238,7 +218,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="450" y="186" />
+        <Position x="642" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -259,7 +239,7 @@
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="354" y="186" />
+        <Position x="390" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -273,6 +253,8 @@
             <SelectField field="DownloadHeaders" selected="False" />
             <SelectField field="JSON_Name" selected="True" />
             <SelectField field="JSON_ValueString" selected="True" />
+            <SelectField field="teamID1" selected="True" />
+            <SelectField field="teamID2" selected="True" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
@@ -286,7 +268,7 @@
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="546" y="186" />
+        <Position x="738" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -322,7 +304,7 @@ and [JSON_Name]!='link'</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="18" y="306" width="492" height="300" />
+        <Position x="54" y="352" width="492" height="300" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -361,7 +343,7 @@ json_name2 = milestones, json_name5=highlight, json_name6=title/blurb/descriptio
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
-        <Position x="258" y="186" />
+        <Position x="294" y="234" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -394,9 +376,27 @@ json_name2 = milestones, json_name5=highlight, json_name6=title/blurb/descriptio
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
     </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="174" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="game_content_link" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="810" y="8.000015" width="378" height="242" />
+        <Position x="846" y="54" width="378" height="242" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -414,7 +414,7 @@ json_name2 = milestones, json_name5=highlight, json_name6=title/blurb/descriptio
       <ChildNodes>
         <Node ToolID="16">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="835" y="58.00002" />
+            <Position x="871" y="104" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -447,7 +447,7 @@ json_name2 = milestones, json_name5=highlight, json_name6=title/blurb/descriptio
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="835" y="134" />
+            <Position x="871" y="180" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -482,7 +482,7 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="955" y="134" />
+            <Position x="991" y="180" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -499,7 +499,6 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
                 <SelectField field="JSON_Name7" selected="False" />
                 <SelectField field="JSON_Name8" selected="False" />
                 <SelectField field="JSON_Name9" selected="False" />
-                <SelectField field="col_name" selected="False" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -513,7 +512,7 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
         </Node>
         <Node ToolID="38">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="954" y="58.00002" />
+            <Position x="990" y="104" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -531,7 +530,6 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
                 <SelectField field="JSON_Name7" selected="False" />
                 <SelectField field="JSON_Name8" selected="False" />
                 <SelectField field="JSON_Name9" selected="False" />
-                <SelectField field="col_name" selected="False" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -545,7 +543,7 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
         </Node>
         <Node ToolID="39">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="1062" y="58.00002" />
+            <Position x="1098" y="104" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -566,7 +564,7 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="810" y="258" width="980" height="213" />
+        <Position x="846" y="304" width="980" height="213" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -584,7 +582,7 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="927" y="310.0001" />
+            <Position x="963" y="356.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -607,13 +605,14 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-            <Position x="1295" y="310" />
+            <Position x="1331" y="356" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <GroupFields>
-                <Field field="teams_id" />
                 <Field field="gameID" />
+                <Field field="teamID1" />
+                <Field field="teamID2" />
                 <Field field="JSON_Name1" />
                 <Field field="JSON_Name2" />
                 <Field field="JSON_Name4" />
@@ -633,8 +632,9 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="teams_id" size="254" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="RegEx: Parsed from game_content_link" name="gameID" size="254" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamID1" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamID2" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
@@ -648,6 +648,7 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
                 <Field name="960x540" size="2048" source="CrossTab:Header:JSON_Name8:960x540:Concat:" type="V_WString" />
                 <Field name="1024x576" size="2048" source="CrossTab:Header:JSON_Name8:1024x576:Concat:" type="V_WString" />
                 <Field name="1136x640" size="2048" source="CrossTab:Header:JSON_Name8:1136x640:Concat:" type="V_WString" />
+                <Field name="1280x720" size="2048" source="CrossTab:Header:JSON_Name8:1280x720:Concat:" type="V_WString" />
                 <Field name="1284x722" size="2048" source="CrossTab:Header:JSON_Name8:1284x722:Concat:" type="V_WString" />
                 <Field name="1536x864" size="2048" source="CrossTab:Header:JSON_Name8:1536x864:Concat:" type="V_WString" />
                 <Field name="1704x960" size="2048" source="CrossTab:Header:JSON_Name8:1704x960:Concat:" type="V_WString" />
@@ -658,8 +659,9 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
                 <Field name="description" size="2048" source="CrossTab:Header:JSON_Name8:description:Concat:" type="V_WString" />
               </RecordInfo>
               <SortInfo>
-                <Field field="teams_id" order="Asc" />
                 <Field field="gameID" order="Asc" />
+                <Field field="teamID1" order="Asc" />
+                <Field field="teamID2" order="Asc" />
                 <Field field="JSON_Name1" order="Asc" />
                 <Field field="JSON_Name2" order="Asc" />
                 <Field field="JSON_Name4" order="Asc" />
@@ -670,7 +672,7 @@ or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="1019" y="310" />
+            <Position x="1055" y="356" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -691,7 +693,7 @@ JSON_Name8 = ...</DefaultAnnotationText>
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="1203" y="310" />
+            <Position x="1239" y="356" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -715,15 +717,15 @@ JSON_Name8 = ...</DefaultAnnotationText>
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
-            <Position x="1479" y="310" />
+            <Position x="1515" y="356" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <FieldType>Text</FieldType>
               <Fields orderChanged="False">
-                <Field name="teams_id" />
                 <Field name="gameID" />
-                <Field name="imageID" />
+                <Field name="type" />
+                <Field name="category" />
                 <Field name="blurb" />
                 <Field name="description" />
                 <Field name="124x70" />
@@ -742,6 +744,9 @@ JSON_Name8 = ...</DefaultAnnotationText>
                 <Field name="2048x1152" />
                 <Field name="2208x1242" />
                 <Field name="2568x1444" />
+                <Field name="teamID1" />
+                <Field name="teamID2" />
+                <Field name="1280x720" />
                 <Field name="*Unknown" />
               </Fields>
               <CopyOutput value="False" />
@@ -758,7 +763,7 @@ JSON_Name8 = ...</DefaultAnnotationText>
         </Node>
         <Node ToolID="41">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="1111" y="310.0001" />
+            <Position x="1147" y="356.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -790,7 +795,7 @@ JSON_Name8 = ...</DefaultAnnotationText>
         </Node>
         <Node ToolID="42">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="1387" y="310" />
+            <Position x="1423" y="356" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -799,7 +804,7 @@ JSON_Name8 = ...</DefaultAnnotationText>
               <SelectFields>
                 <SelectField field="teams_id" selected="True" />
                 <SelectField field="gameID" selected="True" />
-                <SelectField field="JSON_Name4" selected="True" rename="imageID" />
+                <SelectField field="JSON_Name4" selected="True" rename="imageID" type="Int16" size="2" />
                 <SelectField field="JSON_Name1" selected="True" rename="type" />
                 <SelectField field="JSON_Name2" selected="True" rename="category" />
                 <SelectField field="blurb" selected="True" />
@@ -820,6 +825,9 @@ JSON_Name8 = ...</DefaultAnnotationText>
                 <SelectField field="2048x1152" selected="True" />
                 <SelectField field="2208x1242" selected="True" />
                 <SelectField field="2568x1444" selected="True" />
+                <SelectField field="teamID1" selected="True" />
+                <SelectField field="teamID2" selected="True" />
+                <SelectField field="1280x720" selected="True" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -833,15 +841,16 @@ JSON_Name8 = ...</DefaultAnnotationText>
         </Node>
         <Node ToolID="44">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="1571" y="310" />
+            <Position x="1607" y="356" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <OrderChanged value="True" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="teams_id" selected="True" type="Int64" size="8" />
                 <SelectField field="gameID" selected="True" type="Int64" size="8" />
+                <SelectField field="teamID1" selected="True" />
+                <SelectField field="teamID2" selected="True" />
                 <SelectField field="imageID" selected="True" type="Int64" size="8" />
                 <SelectField field="type" selected="True" />
                 <SelectField field="category" selected="True" />
@@ -863,6 +872,7 @@ JSON_Name8 = ...</DefaultAnnotationText>
                 <SelectField field="2048x1152" selected="True" />
                 <SelectField field="2208x1242" selected="True" />
                 <SelectField field="2568x1444" selected="True" />
+                <SelectField field="1280x720" selected="True" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -876,7 +886,7 @@ JSON_Name8 = ...</DefaultAnnotationText>
         </Node>
         <Node ToolID="45">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="1663" y="310" />
+            <Position x="1699" y="356" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -895,7 +905,7 @@ JSON_Name8 = ...</DefaultAnnotationText>
         </Node>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="835" y="308" />
+            <Position x="871" y="354" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -935,7 +945,7 @@ or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="810" y="486" width="661" height="228" />
+        <Position x="846" y="532" width="864" height="226" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -953,7 +963,7 @@ or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="22">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="927" y="538.0001" />
+            <Position x="966" y="582" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -964,7 +974,6 @@ or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
                 <SelectField field="JSON_Name5" selected="False" />
                 <SelectField field="JSON_Name7" selected="False" />
                 <SelectField field="JSON_Name9" selected="False" />
-                <SelectField field="col_name" selected="False" />
                 <SelectField field="*Unknown" selected="True" />
               </SelectFields>
             </Configuration>
@@ -978,13 +987,14 @@ or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
         </Node>
         <Node ToolID="26">
           <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-            <Position x="1295" y="538" />
+            <Position x="1530" y="582" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <GroupFields>
-                <Field field="teams_id" />
                 <Field field="gameID" />
+                <Field field="teamID1" />
+                <Field field="teamID2" />
                 <Field field="JSON_Name1" />
                 <Field field="JSON_Name2" />
                 <Field field="JSON_Name4" />
@@ -1004,8 +1014,9 @@ or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="teams_id" size="254" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="RegEx: Parsed from game_content_link" name="gameID" size="254" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamID1" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamID2" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
                 <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
@@ -1033,8 +1044,9 @@ or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
                 <Field name="title" size="2048" source="CrossTab:Header:col_name:title:Concat:" type="V_WString" />
               </RecordInfo>
               <SortInfo>
-                <Field field="teams_id" order="Asc" />
                 <Field field="gameID" order="Asc" />
+                <Field field="teamID1" order="Asc" />
+                <Field field="teamID2" order="Asc" />
                 <Field field="JSON_Name1" order="Asc" />
                 <Field field="JSON_Name2" order="Asc" />
                 <Field field="JSON_Name4" order="Asc" />
@@ -1045,7 +1057,7 @@ or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
         </Node>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="1019" y="538" />
+            <Position x="1242" y="582" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1065,7 +1077,7 @@ col_name = IF [...</DefaultAnnotationText>
         </Node>
         <Node ToolID="28">
           <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-            <Position x="1111" y="538" />
+            <Position x="1338" y="582" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1090,7 +1102,7 @@ endif</Expression>
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="1203" y="538" />
+            <Position x="1434" y="582" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1122,15 +1134,16 @@ endif</Expression>
         </Node>
         <Node ToolID="46">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="1387" y="538" />
+            <Position x="1626" y="582" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <OrderChanged value="True" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="teams_id" selected="True" type="Int64" size="8" />
                 <SelectField field="gameID" selected="True" type="Int64" size="8" />
+                <SelectField field="teamID1" selected="True" />
+                <SelectField field="teamID2" selected="True" />
                 <SelectField field="JSON_Name4" selected="True" rename="videoID" type="Int64" size="8" />
                 <SelectField field="JSON_Name1" selected="True" rename="type" />
                 <SelectField field="JSON_Name2" selected="True" rename="category" />
@@ -1169,7 +1182,7 @@ endif</Expression>
         </Node>
         <Node ToolID="21">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="835" y="536" />
+            <Position x="871" y="582.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -1210,13 +1223,41 @@ AND ([JSON_Name6]='title'...</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
         </Node>
+        <Node ToolID="51">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1626" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\MICHAL~1.SIC\AppData\Local\Temp\Engine_5936_00826206dc1c4d698e879175d2d36030_\Engine_19516_a42a203704fe4e828129c9c8ca3c16ff_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
       </ChildNodes>
     </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="2" Connection="Input" />
+      <Destination ToolID="57" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="2" Connection="Output" />
@@ -1224,10 +1265,6 @@ AND ([JSON_Name6]='title'...</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="True" />
-      <Destination ToolID="4" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="4" Connection="Output" />
       <Destination ToolID="7" Connection="Input" />
     </Connection>
     <Connection>
@@ -1269,6 +1306,10 @@ AND ([JSON_Name6]='title'...</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="25" Connection="Output" />
       <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Unique" />
+      <Destination ToolID="2" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="16" Connection="True" />
@@ -1327,6 +1368,10 @@ AND ([JSON_Name6]='title'...</DefaultAnnotationText>
       <Destination ToolID="46" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="27" Connection="Output" />
       <Destination ToolID="28" Connection="Input" />
     </Connection>
@@ -1356,7 +1401,7 @@ AND ([JSON_Name6]='title'...</DefaultAnnotationText>
     <DisableAllOutput value="False" />
     <ShowAllMacroMessages value="False" />
     <ShowConnectionStatusIsOn value="True" />
-    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
     <ZoomLevel value="0" />
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
