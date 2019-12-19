@@ -3,12 +3,12 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="42" y="78" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\list_players.yxdb</File>
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\list_players.yxdb</File>
           <FormatSpecificOptions />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -16,9 +16,6 @@
           <DefaultAnnotationText>list_players.yxdb</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="teams_id" source="CrossTab:Group:Concat:" type="Int64" />
@@ -39,13 +36,14 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="162" y="78" />
+        <Position x="174" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
+            <SelectField field="teams_id" selected="True" />
             <SelectField field="teams_name" selected="True" />
             <SelectField field="roster_person_fullName" selected="True" rename="PlayerName" />
             <SelectField field="roster_person_link" selected="True" />
@@ -63,7 +61,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="282" y="78" />
+        <Position x="294" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -83,7 +81,7 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-        <Position x="474" y="78" />
+        <Position x="486" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -132,7 +130,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-        <Position x="90" y="246" />
+        <Position x="102" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -150,7 +148,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="282" y="246" />
+        <Position x="294" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -172,13 +170,14 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="186" y="246" />
+        <Position x="198" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
+            <SelectField field="teams_id" selected="False" />
             <SelectField field="roster_person_link" selected="False" />
             <SelectField field="player_season_stats_URL" selected="False" />
             <SelectField field="DownloadHeaders" selected="False" />
@@ -195,7 +194,7 @@
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="474" y="246" />
+        <Position x="486" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -222,7 +221,7 @@
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-        <Position x="966" y="174" />
+        <Position x="978" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -288,7 +287,7 @@
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="366" y="246" />
+        <Position x="378" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -324,7 +323,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="846" y="246" />
+        <Position x="858" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -356,7 +355,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-        <Position x="966" y="282" />
+        <Position x="978" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -426,7 +425,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-        <Position x="1050" y="174" />
+        <Position x="1062" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -470,8 +469,8 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_name" size="21" source="CrossTab:Group:Concat:" type="String" />
-            <Field name="PlayerName" size="19" source="CrossTab:Group:Concat:" type="V_String" />
+            <Field name="teams_name" size="17" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="PlayerName" size="16" source="CrossTab:Group:Concat:" type="String" />
             <Field name="roster_position_code" size="1" source="CrossTab:Group:Concat:" type="String" />
             <Field name="player_id" source="CrossTab:Group:Concat:" type="Int32" />
             <Field name="evenSaves" source="CrossTab:Header:col_name:evenSaves:Concat:" type="Int16" />
@@ -483,13 +482,13 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
             <Field name="goalsAgainst" source="CrossTab:Header:col_name:goalsAgainst:Concat:" type="Byte" />
             <Field name="losses" source="CrossTab:Header:col_name:losses:Concat:" type="Byte" />
             <Field name="ot" source="CrossTab:Header:col_name:ot:Concat:" type="Byte" />
-            <Field name="powerPlaySavePercentage" size="16" source="CrossTab:Header:col_name:powerPlaySavePercentage:Concat:" type="String" />
-            <Field name="powerPlaySaves" source="CrossTab:Header:col_name:powerPlaySaves:Concat:" type="Int16" />
-            <Field name="powerPlayShots" source="CrossTab:Header:col_name:powerPlayShots:Concat:" type="Int16" />
+            <Field name="powerPlaySavePercentage" source="CrossTab:Header:col_name:powerPlaySavePercentage:Concat:" type="Double" />
+            <Field name="powerPlaySaves" source="CrossTab:Header:col_name:powerPlaySaves:Concat:" type="Byte" />
+            <Field name="powerPlayShots" source="CrossTab:Header:col_name:powerPlayShots:Concat:" type="Byte" />
             <Field name="savePercentage" source="CrossTab:Header:col_name:savePercentage:Concat:" type="Double" />
             <Field name="saves" source="CrossTab:Header:col_name:saves:Concat:" type="Int16" />
             <Field name="season" source="CrossTab:Header:col_name:season:Concat:" type="Int32" />
-            <Field name="shortHandedSavePercentage" size="16" source="CrossTab:Header:col_name:shortHandedSavePercentage:Concat:" type="V_String" />
+            <Field name="shortHandedSavePercentage" source="CrossTab:Header:col_name:shortHandedSavePercentage:Concat:" type="Double" />
             <Field name="shortHandedSaves" source="CrossTab:Header:col_name:shortHandedSaves:Concat:" type="Byte" />
             <Field name="shortHandedShots" source="CrossTab:Header:col_name:shortHandedShots:Concat:" type="Byte" />
             <Field name="shotsAgainst" source="CrossTab:Header:col_name:shotsAgainst:Concat:" type="Int16" />
@@ -505,7 +504,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-        <Position x="1158" y="282" />
+        <Position x="1170" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -553,8 +552,8 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_name" size="21" source="CrossTab:Group:Concat:" type="String" />
-            <Field name="PlayerName" size="24" source="CrossTab:Group:Concat:" type="V_String" />
+            <Field name="teams_name" size="17" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="PlayerName" size="19" source="CrossTab:Group:Concat:" type="V_String" />
             <Field name="roster_position_code" size="1" source="CrossTab:Group:Concat:" type="String" />
             <Field name="player_id" source="CrossTab:Group:Concat:" type="Int32" />
             <Field name="assists" source="CrossTab:Header:col_name:assists:Concat:" type="Byte" />
@@ -565,7 +564,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
             <Field name="games" source="CrossTab:Header:col_name:games:Concat:" type="Byte" />
             <Field name="gameWinningGoals" source="CrossTab:Header:col_name:gameWinningGoals:Concat:" type="Byte" />
             <Field name="goals" source="CrossTab:Header:col_name:goals:Concat:" type="Byte" />
-            <Field name="hits" source="CrossTab:Header:col_name:hits:Concat:" type="Int16" />
+            <Field name="hits" source="CrossTab:Header:col_name:hits:Concat:" type="Byte" />
             <Field name="overTimeGoals" source="CrossTab:Header:col_name:overTimeGoals:Concat:" type="Byte" />
             <Field name="penaltyMinutes" source="CrossTab:Header:col_name:penaltyMinutes:Concat:" type="Byte" />
             <Field name="pim" source="CrossTab:Header:col_name:pim:Concat:" type="Byte" />
@@ -582,7 +581,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
             <Field name="shortHandedTimeOnIce" size="6" source="CrossTab:Header:col_name:shortHandedTimeOnIce:Concat:" type="String" />
             <Field name="shortHandedTimeOnIcePerGame" size="5" source="CrossTab:Header:col_name:shortHandedTimeOnIcePerGame:Concat:" type="String" />
             <Field name="shotPct" source="CrossTab:Header:col_name:shotPct:Concat:" type="Double" />
-            <Field name="shots" source="CrossTab:Header:col_name:shots:Concat:" type="Int16" />
+            <Field name="shots" source="CrossTab:Header:col_name:shots:Concat:" type="Byte" />
             <Field name="timeOnIce" size="7" source="CrossTab:Header:col_name:timeOnIce:Concat:" type="String" />
             <Field name="timeOnIcePerGame" size="5" source="CrossTab:Header:col_name:timeOnIcePerGame:Concat:" type="String" />
           </RecordInfo>
@@ -592,7 +591,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1194" y="174" />
+        <Position x="1206" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -612,7 +611,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1254" y="282" />
+        <Position x="1266" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -632,7 +631,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1062" y="282" />
+        <Position x="1074" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -665,11 +664,11 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1386" y="174" />
+        <Position x="1398" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\goalie_stats.csv</File>
+          <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\goalie_stats.csv</File>
           <Passwords />
           <FormatSpecificOptions>
             <LineEndStyle>CRLF</LineEndStyle>
@@ -697,11 +696,11 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1446" y="282" />
+        <Position x="1458" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\player_stats.csv</File>
+          <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\player_stats.csv</File>
           <Passwords />
           <FormatSpecificOptions>
             <LineEndStyle>CRLF</LineEndStyle>
@@ -729,7 +728,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1350" y="282" />
+        <Position x="1362" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -748,7 +747,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="31">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1290" y="174" />
+        <Position x="1302" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -767,7 +766,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="642" y="246" />
+        <Position x="654" y="222" />
       </GuiSettings>
       <Properties>
         <Configuration>

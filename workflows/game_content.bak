@@ -1,0 +1,1871 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>2000</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>players_gamelog.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="roster_person_fullName" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_person_id" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="roster_position_code" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="date" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="game_number" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="gameID" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="team_name" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="team_id" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="team_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_name" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_id" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="opponent_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="game_content_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="game_gamePk" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="game_link" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="isHome" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="isOT" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="isWin" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="season" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_games" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_timeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_assists" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_blocked" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_evenTimeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_faceOffPct" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_gameWinningGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_goals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_hits" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_overTimeGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_penaltyMinutes" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_pim" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_plusMinus" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_points" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayPoints" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_powerPlayTimeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shifts" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedGoals" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedPoints" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shortHandedTimeOnIce" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shotPct" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+            <Field name="stat_shots" size="2000" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="270" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="team_id" selected="True" rename="teamid1" />
+            <SelectField field="opponent_id" selected="True" rename="teamID2" />
+            <SelectField field="game_content_link" selected="True" />
+            <SelectField field="teams_id" selected="False" rename="teamID1" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="366" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[teamID1]='23' or [teamID2]='23'</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>teams_id</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 23:39:12</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>10</Operand>
+              <StartDate>2019-12-01 23:39:12</StartDate>
+              <EndDate>2019-12-01 23:39:12</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[teamID1]='23' or [teamID2]='23'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="630" y="99.99998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>content_url</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="teams_id" selected="False" />
+              <Field name="game_content_link" selected="False" />
+              <Field name="content_url" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="teams_id" selected="False" />
+              <Field name="game_content_link" selected="False" />
+              <Field name="content_url" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <Password />
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="726" y="99.99998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="534" y="99.99998" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'https://statsapi.web.nhl.com' + [game_content_link]" field="content_url" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>url</AnnotationText>
+          <DefaultAnnotationText><![CDATA[content_url = 'https://statsapi.web.nhl.com' + [game_content_link]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="642" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>JSON_Name</RootName>
+          <Delimeters value="." />
+          <NumFields value="9" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="390" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="teams_id" selected="True" />
+            <SelectField field="gameID" selected="True" />
+            <SelectField field="game_content_link" selected="False" />
+            <SelectField field="content_url" selected="False" />
+            <SelectField field="DownloadHeaders" selected="False" />
+            <SelectField field="JSON_Name" selected="True" />
+            <SelectField field="JSON_ValueString" selected="True" />
+            <SelectField field="teamID1" selected="True" />
+            <SelectField field="teamID2" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="738" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>JSON_Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-01 23:43:08</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2019-12-01 23:43:08</StartDate>
+              <EndDate>2019-12-01 23:43:08</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>remove empty records</AnnotationText>
+          <DefaultAnnotationText>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="352" width="492" height="300" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>json_name5 = url
+preview article url
+
+json_name5 = headline
+recap article
+
+json_name7 = href
+editorial-recap-items-0-tokendata-tokenID-href
+video k recap (po goloch)
+-blbost
+
+jason_name7=bigblurb/blurb/headline
+nadpis k videu (predchadzajuci bod)
+-blbost
+
+json7=cuts and json9=src 
+fotky zo zapasu
+
+json_name2 = milestones, json_name5=highlight, json_name6=title/blurb/description/image(+json_name8=src)
+/playbacks(+json_name8=url/name</Text>
+          <Font name="Calibri Light" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="294" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>game_content_link</Field>
+          <RegExExpression value="\/api\/v1\/game\/(\d{10})\/content" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>game_content_link</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="gameID" type="V_WString" size="254" />
+          </ParseComplex>
+          <Match>
+            <Field>teams_id_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="174" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="game_content_link" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1338" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name2]='epg'</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>gameID</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-09 00:21:36</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>2018020615</Operand>
+              <StartDate>2019-12-09 00:21:36</StartDate>
+              <EndDate>2019-12-09 00:21:36</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name2]='epg'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1506" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\MICHAL~1.SIC\AppData\Local\Temp\Engine_7648_7d1fe7a788d045e0994fbb0cfa4ed486_\Engine_4136_5703c52d44584064b377c14440c05168_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="558" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1818" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="gameID" />
+            <Field field="teamid1" />
+            <Field field="teamID2" />
+            <Field field="JSON_Name3" />
+          </GroupFields>
+          <HeaderField field="col names 2" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="RegEx: Parsed from game_content_link" name="gameID" size="254" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="teamid1" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="teamID2" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="blurb" size="2048" source="CrossTab:Header:col names 2:blurb:Concat:" type="V_WString" />
+            <Field name="description" size="2048" source="CrossTab:Header:col names 2:description:Concat:" type="V_WString" />
+            <Field name="FLASH_192K_320X180" size="2048" source="CrossTab:Header:col names 2:FLASH_192K_320X180:Concat:" type="V_WString" />
+            <Field name="FLASH_450K_400X224" size="2048" source="CrossTab:Header:col names 2:FLASH_450K_400X224:Concat:" type="V_WString" />
+            <Field name="FLASH_1200K_640X360" size="2048" source="CrossTab:Header:col names 2:FLASH_1200K_640X360:Concat:" type="V_WString" />
+            <Field name="FLASH_1800K_960X540" size="2048" source="CrossTab:Header:col names 2:FLASH_1800K_960X540:Concat:" type="V_WString" />
+            <Field name="HTTP_CLOUD_MOBILE" size="2048" source="CrossTab:Header:col names 2:HTTP_CLOUD_MOBILE:Concat:" type="V_WString" />
+            <Field name="HTTP_CLOUD_TABLET" size="2048" source="CrossTab:Header:col names 2:HTTP_CLOUD_TABLET:Concat:" type="V_WString" />
+            <Field name="HTTP_CLOUD_TABLET_60" size="2048" source="CrossTab:Header:col names 2:HTTP_CLOUD_TABLET_60:Concat:" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED" size="2048" source="CrossTab:Header:col names 2:HTTP_CLOUD_WIRED:Concat:" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED_60" size="2048" source="CrossTab:Header:col names 2:HTTP_CLOUD_WIRED_60:Concat:" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED_WEB" size="2048" source="CrossTab:Header:col names 2:HTTP_CLOUD_WIRED_WEB:Concat:" type="V_WString" />
+            <Field name="main_title" size="2048" source="CrossTab:Header:col names 2:main title:Concat:" type="V_WString" />
+            <Field name="title" size="2048" source="CrossTab:Header:col names 2:title:Concat:" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="gameID" order="Asc" />
+            <Field field="teamid1" order="Asc" />
+            <Field field="teamID2" order="Asc" />
+            <Field field="JSON_Name3" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1530" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IIF(IsNull([JSON_Name8]),[JSON_Name6],[JSON_Name8])" field="col names" size="1073741823" type="V_WString" />
+            <FormulaField expression="IIF([col names]='name', [JSON_ValueString],[col names])" field="col names" size="1073741823" type="V_WString" />
+            <FormulaField expression="IIF(IsNull([col names]),'main title',[col names])" field="col names" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>col names = IIF(IsNull([JSON_Name8]),[JSON_Name6],[JSON_Name8])
+col names = IIF(...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1626" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>gameID</UpdateField_Name>
+          <CreateField_Name>col names 2</CreateField_Name>
+          <CreateField_Type>V_WString</CreateField_Type>
+          <CreateField_Size>100</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>iif([col names]='url',[Row-1:col names],[col names])</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>iif([col names]='url',[Row-1:col names],[col names])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1722" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name8] != "name"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>!=</Operator>
+            <Field>JSON_Name8</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-09 00:50:14</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>name</Operand>
+              <StartDate>2019-12-09 00:50:14</StartDate>
+              <EndDate>2019-12-09 00:50:14</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name8] != "name"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2010" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[gameID] = "2018020615"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>gameID</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-09 00:19:24</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>2018020615</Operand>
+              <StartDate>2019-12-09 00:19:24</StartDate>
+              <EndDate>2019-12-09 00:19:24</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[gameID] = "2018020615"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1434" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>([JSON_Name3]=='2' or [JSON_Name3]=='3') and 
+([JSON_Name4]='title' or [JSON_Name6]='title'
+or [JSON_Name8]='url' or [JSON_Name8]='name'
+or
+[JSON_Name6]='blurb' or [JSON_Name6]='description'
+or [JSON_Name6]='playbacks')
+and [JSON_Name8]!='width' and [JSON_Name8]!='height'</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-12-09 01:02:14</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2019-12-09 01:02:14</StartDate>
+              <EndDate>2019-12-09 01:02:14</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>([JSON_Name3]=='2' or [JSON_Name3]=='3') and 
+([JSON_Name4]='title' or [JSON_Nam...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1914" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="gameID" selected="True" />
+            <SelectField field="teamid1" selected="True" />
+            <SelectField field="teamID2" selected="True" />
+            <SelectField field="main_title" selected="True" />
+            <SelectField field="title" selected="True" />
+            <SelectField field="JSON_Name3" selected="False" />
+            <SelectField field="blurb" selected="True" />
+            <SelectField field="description" selected="True" />
+            <SelectField field="FLASH_192K_320X180" selected="True" />
+            <SelectField field="FLASH_450K_400X224" selected="True" />
+            <SelectField field="FLASH_1200K_640X360" selected="True" />
+            <SelectField field="FLASH_1800K_960X540" selected="True" />
+            <SelectField field="HTTP_CLOUD_MOBILE" selected="True" />
+            <SelectField field="HTTP_CLOUD_TABLET" selected="True" />
+            <SelectField field="HTTP_CLOUD_TABLET_60" selected="True" />
+            <SelectField field="HTTP_CLOUD_WIRED" selected="True" />
+            <SelectField field="HTTP_CLOUD_WIRED_60" selected="True" />
+            <SelectField field="HTTP_CLOUD_WIRED_WEB" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="846" y="54" width="468" height="389" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>titles and headings</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="871" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name5] = "url"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>JSON_Name5</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2019-12-02 20:12:26</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>url</Operand>
+                  <StartDate>2019-12-02 20:12:26</StartDate>
+                  <EndDate>2019-12-02 20:12:26</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>preview and recap articles</AnnotationText>
+              <DefaultAnnotationText>[JSON_Name5] = "url"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="871" y="180" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name5] = "headline"
+or [JSON_Name5] = 'subhead'</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>JSON_Name5</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2019-12-02 20:13:13</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>headline</Operand>
+                  <StartDate>2019-12-02 20:13:13</StartDate>
+                  <EndDate>2019-12-02 20:13:13</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>preview and recap titles</AnnotationText>
+              <DefaultAnnotationText>[JSON_Name5] = "headline"
+or [JSON_Name5] = 'subhead'</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="991" y="180" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Name" selected="False" />
+                <SelectField field="JSON_Name1" selected="True" rename="type" />
+                <SelectField field="JSON_Name2" selected="True" rename="category" />
+                <SelectField field="JSON_Name3" selected="False" />
+                <SelectField field="JSON_Name4" selected="False" />
+                <SelectField field="JSON_Name5" selected="True" rename="title_type" />
+                <SelectField field="JSON_Name6" selected="False" />
+                <SelectField field="JSON_Name7" selected="False" />
+                <SelectField field="JSON_Name8" selected="False" />
+                <SelectField field="JSON_Name9" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="990" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Name" selected="False" />
+                <SelectField field="JSON_ValueString" selected="True" rename="URL" />
+                <SelectField field="JSON_Name1" selected="True" rename="type" />
+                <SelectField field="JSON_Name2" selected="True" rename="category" />
+                <SelectField field="JSON_Name3" selected="False" />
+                <SelectField field="JSON_Name4" selected="False" />
+                <SelectField field="JSON_Name5" selected="False" />
+                <SelectField field="JSON_Name6" selected="False" />
+                <SelectField field="JSON_Name7" selected="False" />
+                <SelectField field="JSON_Name8" selected="False" />
+                <SelectField field="JSON_Name9" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1098" y="104" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="'https://nhl.com'+[URL]" field="URL" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[URL = 'https://nhl.com'+[URL]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1050" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Name1" selected="False" />
+                <SelectField field="JSON_Name9" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="70">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1146" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[JSON_Name2]='epg'&#xA;and ([JSON_Name4]='title' or [JSON_Name6]='title')&#xA;or ([JSON_Name8]='url' or [JSON_Name8]='name' or IsNull([JSON_Name8]))&#xA;AND&#xA;([JSON_Name6]='blurb' or [JSON_Name6]='description'&#xA;or [JSON_Name6]='playbacks')" field="test" size="1" type="Bool" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>test = [JSON_Name2]='epg'
+and ([JSON_Name4]='title' or [JSON_Name6]='title')
+or ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1230" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="test" selected="True" />
+                <SelectField field="gameID" selected="True" />
+                <SelectField field="JSON_Name" selected="True" />
+                <SelectField field="JSON_ValueString" selected="True" />
+                <SelectField field="teamid1" selected="True" />
+                <SelectField field="teamID2" selected="True" />
+                <SelectField field="JSON_Name2" selected="True" />
+                <SelectField field="JSON_Name3" selected="True" />
+                <SelectField field="JSON_Name4" selected="True" />
+                <SelectField field="JSON_Name5" selected="True" />
+                <SelectField field="JSON_Name6" selected="True" />
+                <SelectField field="JSON_Name7" selected="True" />
+                <SelectField field="JSON_Name8" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="846" y="304" width="980" height="213" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>preview recap and highlights pictures</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="963" y="356.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Name7" selected="False" />
+                <SelectField field="JSON_Name9" selected="False" />
+                <SelectField field="col_name" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="32">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="1331" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="gameID" />
+                <Field field="teamID2" />
+                <Field field="JSON_Name1" />
+                <Field field="JSON_Name2" />
+                <Field field="JSON_Name4" />
+              </GroupFields>
+              <HeaderField field="JSON_Name8" />
+              <DataField field="JSON_ValueString" />
+              <Methods>
+                <Method method="Concat" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="RegEx: Parsed from game_content_link" name="gameID" size="254" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamID2" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="124x70" size="2048" source="CrossTab:Header:JSON_Name8:124x70:Concat:" type="V_WString" />
+                <Field name="248x140" size="2048" source="CrossTab:Header:JSON_Name8:248x140:Concat:" type="V_WString" />
+                <Field name="320x180" size="2048" source="CrossTab:Header:JSON_Name8:320x180:Concat:" type="V_WString" />
+                <Field name="372x210" size="2048" source="CrossTab:Header:JSON_Name8:372x210:Concat:" type="V_WString" />
+                <Field name="568x320" size="2048" source="CrossTab:Header:JSON_Name8:568x320:Concat:" type="V_WString" />
+                <Field name="640x360" size="2048" source="CrossTab:Header:JSON_Name8:640x360:Concat:" type="V_WString" />
+                <Field name="768x432" size="2048" source="CrossTab:Header:JSON_Name8:768x432:Concat:" type="V_WString" />
+                <Field name="960x540" size="2048" source="CrossTab:Header:JSON_Name8:960x540:Concat:" type="V_WString" />
+                <Field name="1024x576" size="2048" source="CrossTab:Header:JSON_Name8:1024x576:Concat:" type="V_WString" />
+                <Field name="1136x640" size="2048" source="CrossTab:Header:JSON_Name8:1136x640:Concat:" type="V_WString" />
+                <Field name="1280x720" size="2048" source="CrossTab:Header:JSON_Name8:1280x720:Concat:" type="V_WString" />
+                <Field name="1284x722" size="2048" source="CrossTab:Header:JSON_Name8:1284x722:Concat:" type="V_WString" />
+                <Field name="1536x864" size="2048" source="CrossTab:Header:JSON_Name8:1536x864:Concat:" type="V_WString" />
+                <Field name="1704x960" size="2048" source="CrossTab:Header:JSON_Name8:1704x960:Concat:" type="V_WString" />
+                <Field name="2048x1152" size="2048" source="CrossTab:Header:JSON_Name8:2048x1152:Concat:" type="V_WString" />
+                <Field name="2208x1242" size="2048" source="CrossTab:Header:JSON_Name8:2208x1242:Concat:" type="V_WString" />
+                <Field name="2568x1444" size="2048" source="CrossTab:Header:JSON_Name8:2568x1444:Concat:" type="V_WString" />
+                <Field name="blurb" size="2048" source="CrossTab:Header:JSON_Name8:blurb:Concat:" type="V_WString" />
+                <Field name="description" size="2048" source="CrossTab:Header:JSON_Name8:description:Concat:" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="gameID" order="Asc" />
+                <Field field="teamID2" order="Asc" />
+                <Field field="JSON_Name1" order="Asc" />
+                <Field field="JSON_Name2" order="Asc" />
+                <Field field="JSON_Name4" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1055" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IIF(IsNull([JSON_Name8]), [JSON_Name6], [JSON_Name8])" field="JSON_Name8" size="1073741823" type="V_WString" />
+                <FormulaField expression="if IsNull([JSON_Name8]) and [JSON_Name5]='headline'&#xA;then 'blurb' elseif IsNull([JSON_Name8]) and [JSON_Name5]='subhead'&#xA;then 'description' else [JSON_Name8] endif" field="JSON_Name8" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>col_names</AnnotationText>
+              <DefaultAnnotationText>JSON_Name8 = IIF(IsNull([JSON_Name8]), [JSON_Name6], [JSON_Name8])
+JSON_Name8 = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1239" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Name" selected="False" />
+                <SelectField field="JSON_Name3" selected="False" />
+                <SelectField field="JSON_Name5" selected="False" />
+                <SelectField field="JSON_Name6" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="1515" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>Text</FieldType>
+              <Fields orderChanged="False">
+                <Field name="gameID" />
+                <Field name="type" />
+                <Field name="category" />
+                <Field name="blurb" />
+                <Field name="description" />
+                <Field name="124x70" />
+                <Field name="248x140" />
+                <Field name="320x180" />
+                <Field name="372x210" />
+                <Field name="568x320" />
+                <Field name="640x360" />
+                <Field name="768x432" />
+                <Field name="960x540" />
+                <Field name="1024x576" />
+                <Field name="1136x640" />
+                <Field name="1284x722" />
+                <Field name="1536x864" />
+                <Field name="1704x960" />
+                <Field name="2048x1152" />
+                <Field name="2208x1242" />
+                <Field name="2568x1444" />
+                <Field name="teamID2" />
+                <Field name="1280x720" />
+                <Field name="*Unknown" />
+              </Fields>
+              <CopyOutput value="False" />
+              <Expression>iif(isempty([_CurrentField_]),'not available',[_CurrentField_])</Expression>
+              <ChangeFieldType value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>iif(isempty([_CurrentField_]),'not available',[_CurrentField_])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1147" y="356.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name4] != "items"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>!=</Operator>
+                <Field>JSON_Name4</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2019-12-02 21:24:17</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>items</Operand>
+                  <StartDate>2019-12-02 21:24:17</StartDate>
+                  <EndDate>2019-12-02 21:24:17</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[JSON_Name4] != "items"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1423" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="teams_id" selected="True" />
+                <SelectField field="gameID" selected="True" />
+                <SelectField field="JSON_Name4" selected="True" rename="imageID" type="Int16" size="2" />
+                <SelectField field="JSON_Name1" selected="True" rename="type" />
+                <SelectField field="JSON_Name2" selected="True" rename="category" />
+                <SelectField field="blurb" selected="True" />
+                <SelectField field="description" selected="True" />
+                <SelectField field="124x70" selected="True" />
+                <SelectField field="248x140" selected="True" />
+                <SelectField field="320x180" selected="True" />
+                <SelectField field="372x210" selected="True" />
+                <SelectField field="568x320" selected="True" />
+                <SelectField field="640x360" selected="True" />
+                <SelectField field="768x432" selected="True" />
+                <SelectField field="960x540" selected="True" />
+                <SelectField field="1024x576" selected="True" />
+                <SelectField field="1136x640" selected="True" />
+                <SelectField field="1284x722" selected="True" />
+                <SelectField field="1536x864" selected="True" />
+                <SelectField field="1704x960" selected="True" />
+                <SelectField field="2048x1152" selected="True" />
+                <SelectField field="2208x1242" selected="True" />
+                <SelectField field="2568x1444" selected="True" />
+                <SelectField field="teamID1" selected="True" />
+                <SelectField field="teamID2" selected="True" />
+                <SelectField field="1280x720" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1607" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="gameID" selected="True" type="Int64" size="8" />
+                <SelectField field="teamID1" selected="True" />
+                <SelectField field="teamID2" selected="True" />
+                <SelectField field="imageID" selected="True" type="Int64" size="8" />
+                <SelectField field="type" selected="True" />
+                <SelectField field="category" selected="True" />
+                <SelectField field="blurb" selected="True" />
+                <SelectField field="description" selected="True" />
+                <SelectField field="124x70" selected="True" />
+                <SelectField field="248x140" selected="True" />
+                <SelectField field="320x180" selected="True" />
+                <SelectField field="372x210" selected="True" />
+                <SelectField field="568x320" selected="True" />
+                <SelectField field="640x360" selected="True" />
+                <SelectField field="768x432" selected="True" />
+                <SelectField field="960x540" selected="True" />
+                <SelectField field="1024x576" selected="True" />
+                <SelectField field="1136x640" selected="True" />
+                <SelectField field="1284x722" selected="True" />
+                <SelectField field="1536x864" selected="True" />
+                <SelectField field="1704x960" selected="True" />
+                <SelectField field="2048x1152" selected="True" />
+                <SelectField field="2208x1242" selected="True" />
+                <SelectField field="2568x1444" selected="True" />
+                <SelectField field="1280x720" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1699" y="356" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if [category]= 'milestones' then 'highlight' else [category] endif" field="category" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[category = if [category]= 'milestones' then 'highlight' else [category] endif
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="871" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name7] = "cuts"
+and [JSON_Name9]='src'
+or [JSON_Name6]='blurb' or [JSON_Name6]='description'
+or [JSON_Name5]='headline' or [JSON_Name5]='subhead'</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>JSON_Name7</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2019-12-02 20:14:45</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>cuts</Operand>
+                  <StartDate>2019-12-02 20:14:45</StartDate>
+                  <EndDate>2019-12-02 20:14:45</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>gametime photos</AnnotationText>
+              <DefaultAnnotationText>[JSON_Name7] = "cuts"
+and [JSON_Name9]='src'
+or [JSON_Name6]='blurb' or [JSON_Na...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="845" y="531.9999" width="865" height="226.0001" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>images and video urls</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1062" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Name3" selected="False" />
+                <SelectField field="JSON_Name5" selected="False" />
+                <SelectField field="JSON_Name7" selected="False" />
+                <SelectField field="JSON_Name9" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="1530" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="gameID" />
+                <Field field="teamID1" />
+                <Field field="teamID2" />
+                <Field field="JSON_Name1" />
+                <Field field="JSON_Name2" />
+                <Field field="JSON_Name4" />
+              </GroupFields>
+              <HeaderField field="col_name" />
+              <DataField field="col_value" />
+              <Methods>
+                <Method method="Concat" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="RegEx: Parsed from game_content_link" name="gameID" size="254" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamid1" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamID2" size="2000" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="124x70" size="2048" source="CrossTab:Header:col_name:124x70:Concat:" type="V_WString" />
+                <Field name="248x140" size="2048" source="CrossTab:Header:col_name:248x140:Concat:" type="V_WString" />
+                <Field name="320x180" size="2048" source="CrossTab:Header:col_name:320x180:Concat:" type="V_WString" />
+                <Field name="372x210" size="2048" source="CrossTab:Header:col_name:372x210:Concat:" type="V_WString" />
+                <Field name="568x320" size="2048" source="CrossTab:Header:col_name:568x320:Concat:" type="V_WString" />
+                <Field name="640x360" size="2048" source="CrossTab:Header:col_name:640x360:Concat:" type="V_WString" />
+                <Field name="768x432" size="2048" source="CrossTab:Header:col_name:768x432:Concat:" type="V_WString" />
+                <Field name="960x540" size="2048" source="CrossTab:Header:col_name:960x540:Concat:" type="V_WString" />
+                <Field name="1024x576" size="2048" source="CrossTab:Header:col_name:1024x576:Concat:" type="V_WString" />
+                <Field name="1136x640" size="2048" source="CrossTab:Header:col_name:1136x640:Concat:" type="V_WString" />
+                <Field name="description" size="2048" source="CrossTab:Header:col_name:description:Concat:" type="V_WString" />
+                <Field name="FLASH_192K_320X180" size="2048" source="CrossTab:Header:col_name:FLASH_192K_320X180:Concat:" type="V_WString" />
+                <Field name="FLASH_450K_400X224" size="2048" source="CrossTab:Header:col_name:FLASH_450K_400X224:Concat:" type="V_WString" />
+                <Field name="FLASH_1200K_640X360" size="2048" source="CrossTab:Header:col_name:FLASH_1200K_640X360:Concat:" type="V_WString" />
+                <Field name="FLASH_1800K_960X540" size="2048" source="CrossTab:Header:col_name:FLASH_1800K_960X540:Concat:" type="V_WString" />
+                <Field name="HTTP_CLOUD_MOBILE" size="2048" source="CrossTab:Header:col_name:HTTP_CLOUD_MOBILE:Concat:" type="V_WString" />
+                <Field name="HTTP_CLOUD_TABLET" size="2048" source="CrossTab:Header:col_name:HTTP_CLOUD_TABLET:Concat:" type="V_WString" />
+                <Field name="HTTP_CLOUD_TABLET_60" size="2048" source="CrossTab:Header:col_name:HTTP_CLOUD_TABLET_60:Concat:" type="V_WString" />
+                <Field name="HTTP_CLOUD_WIRED" size="2048" source="CrossTab:Header:col_name:HTTP_CLOUD_WIRED:Concat:" type="V_WString" />
+                <Field name="HTTP_CLOUD_WIRED_60" size="2048" source="CrossTab:Header:col_name:HTTP_CLOUD_WIRED_60:Concat:" type="V_WString" />
+                <Field name="HTTP_CLOUD_WIRED_WEB" size="2048" source="CrossTab:Header:col_name:HTTP_CLOUD_WIRED_WEB:Concat:" type="V_WString" />
+                <Field name="title" size="2048" source="CrossTab:Header:col_name:title:Concat:" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="gameID" order="Asc" />
+                <Field field="teamID1" order="Asc" />
+                <Field field="teamID2" order="Asc" />
+                <Field field="JSON_Name1" order="Asc" />
+                <Field field="JSON_Name2" order="Asc" />
+                <Field field="JSON_Name4" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1242" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IIF(IsNull([JSON_Name8]),[JSON_Name6],[JSON_Name8])" field="JSON_Name8" size="1073741823" type="V_WString" />
+                <FormulaField expression="IF [JSON_Name8]='name' then [JSON_ValueString]&#xA;else [JSON_Name8] endif" field="col_name" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>JSON_Name8 = IIF(IsNull([JSON_Name8]),[JSON_Name6],[JSON_Name8])
+col_name = IF [...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="1338" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="False" />
+              <UpdateField_Name>teams_id</UpdateField_Name>
+              <CreateField_Name>col_value</CreateField_Name>
+              <CreateField_Type>V_WString</CreateField_Type>
+              <CreateField_Size>400</CreateField_Size>
+              <OtherRows>Empty</OtherRows>
+              <NumRows value="1" />
+              <Expression>if json_name8 = 'name' then [Row+1:JSON_ValueString] else json_valuestring
+endif</Expression>
+              <GroupByFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>if json_name8 = 'name' then [Row+1:JSON_ValueString] else jso...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1434" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name8] != "url"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>!=</Operator>
+                <Field>JSON_Name8</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2019-12-02 20:53:36</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>url</Operand>
+                  <StartDate>2019-12-02 20:53:36</StartDate>
+                  <EndDate>2019-12-02 20:53:36</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[JSON_Name8] != "url"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1626" y="582" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="gameID" selected="True" type="Int64" size="8" />
+                <SelectField field="teamID1" selected="True" />
+                <SelectField field="teamID2" selected="True" />
+                <SelectField field="JSON_Name4" selected="True" rename="videoID" type="Int64" size="8" />
+                <SelectField field="JSON_Name1" selected="True" rename="type" />
+                <SelectField field="JSON_Name2" selected="True" rename="category" />
+                <SelectField field="title" selected="True" />
+                <SelectField field="description" selected="True" />
+                <SelectField field="124x70" selected="True" />
+                <SelectField field="248x140" selected="True" />
+                <SelectField field="320x180" selected="True" />
+                <SelectField field="372x210" selected="True" />
+                <SelectField field="568x320" selected="True" />
+                <SelectField field="640x360" selected="True" />
+                <SelectField field="768x432" selected="True" />
+                <SelectField field="960x540" selected="True" />
+                <SelectField field="1024x576" selected="True" />
+                <SelectField field="1136x640" selected="True" />
+                <SelectField field="FLASH_192K_320X180" selected="True" />
+                <SelectField field="FLASH_450K_400X224" selected="True" />
+                <SelectField field="FLASH_1200K_640X360" selected="True" />
+                <SelectField field="FLASH_1800K_960X540" selected="True" />
+                <SelectField field="HTTP_CLOUD_MOBILE" selected="True" />
+                <SelectField field="HTTP_CLOUD_TABLET" selected="True" />
+                <SelectField field="HTTP_CLOUD_TABLET_60" selected="True" />
+                <SelectField field="HTTP_CLOUD_WIRED" selected="True" />
+                <SelectField field="HTTP_CLOUD_WIRED_60" selected="True" />
+                <SelectField field="HTTP_CLOUD_WIRED_WEB" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="870" y="581.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name2]='milestones'
+and [JSON_Name5]='highlight'
+AND ([JSON_Name6]='title' or [JSON_Name6]='description' 
+or [JSON_Name6]='image' or [JSON_Name6]='playbacks')
+AND (IsNull(json_name8) or [JSON_Name9]='src' 
+or [JSON_Name8]='url' or [JSON_Name8]='name')
+and [JSON_Name7]!='title' and [JSON_Name7]!='alttext'</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>=</Operator>
+                <Field>
+                </Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2019-12-02 20:20:33</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2019-12-02 20:20:33</StartDate>
+                  <EndDate>2019-12-02 20:20:33</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>highlight photos and videos</AnnotationText>
+              <DefaultAnnotationText>[JSON_Name2]='milestones'
+and [JSON_Name5]='highlight'
+AND ([JSON_Name6]='title'...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="51">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1626" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\MICHAL~1.SIC\AppData\Local\Temp\Engine_7648_7d1fe7a788d045e0994fbb0cfa4ed486_\Engine_4136_12e2a72237104412a5184de6a4568def_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Unique" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="True" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="True" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="True" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="True" />
+      <Destination ToolID="65" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="True" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="70" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="True" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="True" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="True" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="True" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>game_content</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

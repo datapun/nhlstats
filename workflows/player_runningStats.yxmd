@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="150" />
+        <Position x="54" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -25,9 +25,6 @@
           <DefaultAnnotationText>players_gamelog.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="teams_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog.csv" type="V_WString" />
@@ -82,11 +79,11 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="438" y="42" />
+        <Position x="438" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\MICHAL~1.SIC\AppData\Local\Temp\Engine_4328_b42390fc8a16423a9002a07196df6281_\Engine_8744_e27626fb26794f01923c299adcf66f95_.yxdb</TempFile>
+          <TempFile>C:\Users\MICHAL~1.SIC\AppData\Local\Temp\Engine_8392_be924d3be7c24c16aa110d05bcb99703_\Engine_4136_1679cc09198c46f8aa59c524c8da818d_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -110,7 +107,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="342" y="138" />
+        <Position x="342" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -144,17 +141,19 @@ or [roster_person_fullName]='Jay Beagle'</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="438" y="138" />
+        <Position x="438" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SortInfo locale="0">
+            <Field field="roster_person_id" order="Ascending" />
             <Field field="date" order="Ascending" />
           </SortInfo>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>date - Ascending</DefaultAnnotationText>
+          <DefaultAnnotationText>roster_person_id - Ascending
+date - Ascending</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -162,7 +161,7 @@ or [roster_person_fullName]='Jay Beagle'</DefaultAnnotationText>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="246" y="150" />
+        <Position x="246" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -182,7 +181,7 @@ or [roster_person_fullName]='Jay Beagle'</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-        <Position x="150" y="150" />
+        <Position x="150" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -294,7 +293,7 @@ or [roster_person_fullName]='Jay Beagle'</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="630" y="138" />
+        <Position x="630" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -320,7 +319,7 @@ or [roster_person_fullName]='Jay Beagle'</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="534" y="138" />
+        <Position x="534" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -333,9 +332,7 @@ or [roster_person_fullName]='Jay Beagle'</DefaultAnnotationText>
             <SelectField field="date" selected="True" />
             <SelectField field="game_gamePk" selected="True" />
             <SelectField field="stat_assists" selected="True" />
-            <SelectField field="stat_games" selected="True" />
             <SelectField field="stat_goals" selected="True" />
-            <SelectField field="stat_points" selected="True" />
             <SelectField field="Tile_Num" selected="True" />
             <SelectField field="Tile_SequenceNum" selected="True" />
             <SelectField field="*Unknown" selected="False" />
