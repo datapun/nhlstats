@@ -1,0 +1,945 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="102" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>players_gamelog_*.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="roster_person_fullName" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="roster_person_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="roster_position_code" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="date" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="game_number" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="team_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="team_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="team_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="opponent_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="opponent_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="opponent_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="game_content_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="game_gamePk" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="game_link" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="isHome" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="isOT" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="isWin" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="season" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_games" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_timeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_assists" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_blocked" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_evenTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_faceOffPct" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_gameWinningGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_goals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_hits" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_overTimeGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_penaltyMinutes" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_pim" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_plusMinus" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_points" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_powerPlayGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_powerPlayPoints" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_powerPlayTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_shifts" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_shortHandedGoals" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_shortHandedPoints" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_shortHandedTimeOnIce" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_shotPct" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+            <Field name="stat_shots" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\players_gamelog_*.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="42" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>game_highlights*.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="teamid1" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="teamID2" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="main_title" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="title" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="blurb" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="description" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="FLASH_192K_320X180" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="FLASH_450K_400X224" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="FLASH_1200K_640X360" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="FLASH_1800K_960X540" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_MOBILE" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_TABLET" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_TABLET_60" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED_60" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED_WEB" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights*.csv" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="126" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>preview_highlights20172018.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="teamid1" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="teamID2" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="imageID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="type" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="category" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="blurb" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="description" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="124x70" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="248x140" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="320x180" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="372x210" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="568x320" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="640x360" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="768x432" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="960x540" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="1024x576" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="1136x640" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="1284x722" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="1536x864" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="1704x960" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="2048x1152" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="2208x1242" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="2568x1444" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="1280x720" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+            <Field name="2568x1445" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20172018.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="126" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>preview_highlights20182019.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="teamid1" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="teamID2" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="imageID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="type" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="category" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="blurb" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="description" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="124x70" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="248x140" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="320x180" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="372x210" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="568x320" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="640x360" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="768x432" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="960x540" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="1024x576" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="1136x640" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="1284x722" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="1536x864" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="1704x960" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="2048x1152" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="2208x1242" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="2568x1444" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+            <Field name="1280x720" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20182019.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="126" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>preview_highlights20192020.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="teamid1" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="teamID2" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="imageID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="type" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="category" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="blurb" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="description" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="124x70" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="248x140" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="320x180" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="372x210" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="568x320" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="640x360" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="768x432" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="960x540" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="1024x576" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="1136x640" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="1284x722" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="1536x864" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="1704x960" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="2048x1152" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="2208x1242" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="2568x1444" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+            <Field name="1280x720" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\preview_highlights20192020.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="318" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="378" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="game_gamePk" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="gameID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_gameID" selected="True" rename="Right_gameID" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="258" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>main_title</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-02-16 22:25:15</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>recap</Operand>
+              <StartDate>2020-02-16 22:25:15</StartDate>
+              <EndDate>2020-02-16 22:25:15</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[main_title] = "recap"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="438" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>category</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-02-16 22:27:10</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>recap</Operand>
+              <StartDate>2020-02-16 22:27:10</StartDate>
+              <EndDate>2020-02-16 22:27:10</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[category] = "recap"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="606" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="game_gamePk" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="gameID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Right_gameID" selected="True" rename="Left_Right_gameID" input="Left_" />
+                <SelectField field="Left_FLASH_192K_320X180" selected="False" input="Left_" />
+                <SelectField field="Left_FLASH_450K_400X224" selected="False" input="Left_" />
+                <SelectField field="Left_HTTP_CLOUD_MOBILE" selected="False" input="Left_" />
+                <SelectField field="Left_HTTP_CLOUD_TABLET" selected="False" input="Left_" />
+                <SelectField field="Left_HTTP_CLOUD_TABLET_60" selected="False" input="Left_" />
+                <SelectField field="Left_HTTP_CLOUD_WIRED" selected="False" input="Left_" />
+                <SelectField field="Left_HTTP_CLOUD_WIRED_60" selected="False" input="Left_" />
+                <SelectField field="Left_HTTP_CLOUD_WIRED_WEB" selected="False" input="Left_" />
+                <SelectField field="Right_gameID" selected="False" rename="Right_gameID" input="Right_" />
+                <SelectField field="Right_teamid1" selected="False" rename="Right_teamid1" input="Right_" />
+                <SelectField field="Right_teamID2" selected="False" rename="Right_teamID2" input="Right_" />
+                <SelectField field="Right_imageID" selected="False" input="Right_" />
+                <SelectField field="Right_type" selected="False" input="Right_" />
+                <SelectField field="Right_category" selected="False" input="Right_" />
+                <SelectField field="Right_blurb" selected="False" rename="Right_blurb" input="Right_" />
+                <SelectField field="Right_description" selected="False" rename="Right_description" input="Right_" />
+                <SelectField field="Right_124x70" selected="False" input="Right_" />
+                <SelectField field="Right_248x140" selected="False" input="Right_" />
+                <SelectField field="Right_320x180" selected="False" input="Right_" />
+                <SelectField field="Right_372x210" selected="False" input="Right_" />
+                <SelectField field="Right_568x320" selected="False" input="Right_" />
+                <SelectField field="Right_640x360" selected="False" input="Right_" />
+                <SelectField field="Right_768x432" selected="False" input="Right_" />
+                <SelectField field="Right_960x540" selected="False" input="Right_" />
+                <SelectField field="Right_1284x722" selected="False" input="Right_" />
+                <SelectField field="Right_1536x864" selected="False" input="Right_" />
+                <SelectField field="Right_1704x960" selected="False" input="Right_" />
+                <SelectField field="Right_2048x1152" selected="False" input="Right_" />
+                <SelectField field="Right_2208x1242" selected="False" input="Right_" />
+                <SelectField field="Right_2568x1444" selected="False" input="Right_" />
+                <SelectField field="Right_1280x720" selected="False" input="Right_" />
+                <SelectField field="Right_2568x1445" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>game_highlights20192020.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="gameID" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="teamid1" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="teamID2" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="main_title" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="title" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="blurb" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="description" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="FLASH_192K_320X180" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="FLASH_450K_400X224" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="FLASH_1200K_640X360" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="FLASH_1800K_960X540" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_MOBILE" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_TABLET" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_TABLET_60" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED_60" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="HTTP_CLOUD_WIRED_WEB" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="FLASH_450K_384x216" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+            <Field name="FLASH_1800K_896x504" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\game_highlights20192020.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="gameID" selected="True" />
+            <SelectField field="teamid1" selected="True" />
+            <SelectField field="teamID2" selected="True" />
+            <SelectField field="main_title" selected="True" />
+            <SelectField field="title" selected="True" />
+            <SelectField field="blurb" selected="True" />
+            <SelectField field="description" selected="True" />
+            <SelectField field="FLASH_192K_320X180" selected="True" />
+            <SelectField field="FLASH_450K_400X224" selected="True" />
+            <SelectField field="FLASH_1200K_640X360" selected="True" />
+            <SelectField field="FLASH_1800K_960X540" selected="True" />
+            <SelectField field="HTTP_CLOUD_MOBILE" selected="True" />
+            <SelectField field="HTTP_CLOUD_TABLET" selected="True" />
+            <SelectField field="HTTP_CLOUD_TABLET_60" selected="True" />
+            <SelectField field="HTTP_CLOUD_WIRED" selected="True" />
+            <SelectField field="HTTP_CLOUD_WIRED_60" selected="True" />
+            <SelectField field="HTTP_CLOUD_WIRED_WEB" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="198" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="270" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="date" action="Max" rename="Max_date" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="582" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>65001</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>teams_list20192020.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Season" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="teamid" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="Team Abbreviation" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="Team Name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="Team Nickname" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="division_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="division_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="conference_id" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+            <Field name="conference_name" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\teams_list20192020.csv" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="750" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5020_69177bf3900d428893a4a1cc804ec74a_\Engine_10004_1e1da30200934793b09a56131be64f03_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="558" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Text</FieldType>
+          <Fields orderChanged="False">
+            <Field name="gameID" />
+            <Field name="teamid1" />
+            <Field name="teamID2" />
+            <Field name="imageID" />
+            <Field name="type" />
+            <Field name="category" />
+            <Field name="blurb" />
+            <Field name="description" />
+            <Field name="124x70" />
+            <Field name="248x140" />
+            <Field name="320x180" />
+            <Field name="372x210" />
+            <Field name="568x320" />
+            <Field name="640x360" />
+            <Field name="768x432" />
+            <Field name="960x540" />
+            <Field name="1024x576" />
+            <Field name="1136x640" />
+            <Field name="1284x722" />
+            <Field name="1536x864" />
+            <Field name="1704x960" />
+            <Field name="2048x1152" />
+            <Field name="2208x1242" />
+            <Field name="2568x1444" />
+            <Field name="1280x720" />
+            <Field name="2568x1445" />
+            <Field name="*Unknown" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>iif([_CurrentField_]='not available',null(),[_CurrentField_])</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>iif([_CurrentField_]='not available',null(),[_CurrentField_])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="702" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5020_69177bf3900d428893a4a1cc804ec74a_\Engine_10004_11128e048e3e416d880bc1ba6b61ccff_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+        <Position x="510" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldType>Text</FieldType>
+          <Fields orderChanged="False">
+            <Field name="gameID" />
+            <Field name="teamid1" />
+            <Field name="teamID2" />
+            <Field name="imageID" />
+            <Field name="type" />
+            <Field name="category" />
+            <Field name="blurb" />
+            <Field name="description" />
+            <Field name="124x70" />
+            <Field name="248x140" />
+            <Field name="320x180" />
+            <Field name="372x210" />
+            <Field name="568x320" />
+            <Field name="640x360" />
+            <Field name="768x432" />
+            <Field name="960x540" />
+            <Field name="1024x576" />
+            <Field name="1136x640" />
+            <Field name="1284x722" />
+            <Field name="1536x864" />
+            <Field name="1704x960" />
+            <Field name="2048x1152" />
+            <Field name="2208x1242" />
+            <Field name="2568x1444" />
+            <Field name="1280x720" />
+            <Field name="2568x1445" />
+            <Field name="*Unknown" />
+          </Fields>
+          <CopyOutput value="False" />
+          <Expression>iif([_CurrentField_]='not available',null(),[_CurrentField_])</Expression>
+          <ChangeFieldType value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>iif([_CurrentField_]='not available',null(),[_CurrentField_])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="713" y="184" width="161.7782" height="181" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 22</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="738" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\2017_2020 gamelog_highlights.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2017_2020 gamelog_highlights.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="16" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="True" />
+      <Destination ToolID="16" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="19" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="True" />
+      <Destination ToolID="19" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Join" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="True" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>union data 2017 2020</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

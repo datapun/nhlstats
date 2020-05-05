@@ -1,0 +1,915 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.4">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="318" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>RosterURL</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="teamid" selected="False" />
+              <Field name="Team Name" selected="False" />
+              <Field name="Season" selected="False" />
+              <Field name="RosterURL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="teamid" selected="False" />
+              <Field name="Team Name" selected="False" />
+              <Field name="Season" selected="False" />
+              <Field name="RosterURL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <Password />
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="RosterURL" size="1073741823" source="Formula: 'https://statsapi.web.nhl.com/..." type="V_WString" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="402" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="RosterURL" size="1073741823" source="Formula: 'https://statsapi.web.nhl.com/..." type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="594" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>
+          </RootName>
+          <Delimeters value="." />
+          <NumFields value="4" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="498" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RosterURL" selected="False" />
+            <SelectField field="DownloadHeaders" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="234" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'https://statsapi.web.nhl.com/api/v1/teams/'&#xA;+ [teamid] +&#xA;'/roster?season='+[Season]" field="RosterURL" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>RosterURL</AnnotationText>
+          <DefaultAnnotationText>RosterURL = 'https://statsapi.web.nhl.com/api/v1/teams/'
++ [teamid] +
+'/roster?s...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="RosterURL" size="1073741823" source="Formula: 'https://statsapi.web.nhl.com/..." type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="786" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="JSON_Name" selected="False" />
+            <SelectField field="2" selected="True" rename="rowID" type="Int64" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="TextToColumns: Parsed from JSON_Name" type="Int64" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="882" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[1]+' '+[3]+' '+[4]" field="col_name" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[col_name = [1]+' '+[3]+' '+[4]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="TextToColumns: Parsed from JSON_Name" type="Int64" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field name="col_name" size="1073741823" source="Formula: [1]+' '+[3]+' '+[4]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1170" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="teamid" />
+            <Field field="Team Name" />
+            <Field field="Season" />
+            <Field field="rowID" />
+            <Field field="SeasonSuffix" />
+          </GroupFields>
+          <HeaderField field="col_name" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="CrossTab:Group:Concat:" type="Int64" />
+            <Field name="SeasonSuffix" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="teamid" order="Asc" />
+            <Field field="Team Name" order="Asc" />
+            <Field field="Season" order="Asc" />
+            <Field field="rowID" order="Asc" />
+            <Field field="SeasonSuffix" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="678" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1266" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="19" MaxRecords="">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\list_players.yxdb</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <NoSpatialIndex>False</NoSpatialIndex>
+            <SaveSource>True</SaveSource>
+          </FormatSpecificOptions>
+          <MultiFile value="True" />
+          <MultiFileType>Suffix</MultiFileType>
+          <MultiFileField>SeasonSuffix</MultiFileField>
+          <KeepField value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>list_players.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings>
+        <Position x="978" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"JSON_ValueString","1","rowID","3","4","col_name"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output26">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Team Name" size="2048" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="1" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="Formula: IF [_CurrentFieldName_] IN(&quot;JS..." type="Int64" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="3" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="4" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="col_name" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1074" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([col_name], ' ', '_')" field="col_name" size="1073741823" type="V_WString" />
+            <FormulaField expression="'_'+[Season]" field="SeasonSuffix" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[col_name = Replace([col_name], ' ', '_')
+SeasonSuffix = '_'+[Season]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Team Name" size="2048" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="1" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="Formula: IF [_CurrentFieldName_] IN(&quot;JS..." type="Int64" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="3" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="4" size="1073741823" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="col_name" size="1073741823" source="Formula: Replace([col_name], ' ', '_')" type="V_WString" />
+            <Field name="SeasonSuffix" size="1073741823" source="Formula: '_'+[Season]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1266" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_11200_9a26c064c0dd4ffebefb8387088961d1_\Engine_6724_3d6d3ce4c5334a17953fbc102ee48614_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="URL" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://statsapi.web.nhl.com/api/v1/teams?season=20012002</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="URL" size="57" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings>
+        <Position x="138" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>TeamsListMacro (40)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Teams">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Header:3:id:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Header:3:name:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="Formula: Right([URL], 8)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="TeamsListMacro.yxmc" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="52.99998" y="64" width="621" height="230" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Season Picker</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="77.99998" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\seasons_list.csv</File>
+              <FormatSpecificOptions>
+                <CodePage>65001</CodePage>
+                <Delimeter>,</Delimeter>
+                <IgnoreErrors>False</IgnoreErrors>
+                <FieldLen>254</FieldLen>
+                <AllowShareWrite>False</AllowShareWrite>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>seasons_list.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Season" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\seasons_list.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings>
+            <Position x="162" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Ranges">74+</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Season" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\seasons_list.csv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings Macro="SelectRecords.yxmc" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
+            <Position x="498" y="114" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="23">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="354" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields />
+              <HeaderField field="Season" />
+              <DataField field="Value" />
+              <Methods>
+                <Method method="Concat" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="19901991" size="2048" source="CrossTab:Header:Season:19901991:Concat:" type="V_WString" />
+                <Field name="19911992" size="2048" source="CrossTab:Header:Season:19911992:Concat:" type="V_WString" />
+                <Field name="19921993" size="2048" source="CrossTab:Header:Season:19921993:Concat:" type="V_WString" />
+                <Field name="19931994" size="2048" source="CrossTab:Header:Season:19931994:Concat:" type="V_WString" />
+                <Field name="19941995" size="2048" source="CrossTab:Header:Season:19941995:Concat:" type="V_WString" />
+                <Field name="19951996" size="2048" source="CrossTab:Header:Season:19951996:Concat:" type="V_WString" />
+                <Field name="19961997" size="2048" source="CrossTab:Header:Season:19961997:Concat:" type="V_WString" />
+                <Field name="19971998" size="2048" source="CrossTab:Header:Season:19971998:Concat:" type="V_WString" />
+                <Field name="19981999" size="2048" source="CrossTab:Header:Season:19981999:Concat:" type="V_WString" />
+                <Field name="19992000" size="2048" source="CrossTab:Header:Season:19992000:Concat:" type="V_WString" />
+                <Field name="20002001" size="2048" source="CrossTab:Header:Season:20002001:Concat:" type="V_WString" />
+                <Field name="20012002" size="2048" source="CrossTab:Header:Season:20012002:Concat:" type="V_WString" />
+                <Field name="20022003" size="2048" source="CrossTab:Header:Season:20022003:Concat:" type="V_WString" />
+                <Field name="20032004" size="2048" source="CrossTab:Header:Season:20032004:Concat:" type="V_WString" />
+                <Field name="20052006" size="2048" source="CrossTab:Header:Season:20052006:Concat:" type="V_WString" />
+                <Field name="20062007" size="2048" source="CrossTab:Header:Season:20062007:Concat:" type="V_WString" />
+                <Field name="20072008" size="2048" source="CrossTab:Header:Season:20072008:Concat:" type="V_WString" />
+                <Field name="20082009" size="2048" source="CrossTab:Header:Season:20082009:Concat:" type="V_WString" />
+                <Field name="20092010" size="2048" source="CrossTab:Header:Season:20092010:Concat:" type="V_WString" />
+                <Field name="20102011" size="2048" source="CrossTab:Header:Season:20102011:Concat:" type="V_WString" />
+                <Field name="20112012" size="2048" source="CrossTab:Header:Season:20112012:Concat:" type="V_WString" />
+                <Field name="20122013" size="2048" source="CrossTab:Header:Season:20122013:Concat:" type="V_WString" />
+                <Field name="20132014" size="2048" source="CrossTab:Header:Season:20132014:Concat:" type="V_WString" />
+                <Field name="20142015" size="2048" source="CrossTab:Header:Season:20142015:Concat:" type="V_WString" />
+                <Field name="20152016" size="2048" source="CrossTab:Header:Season:20152016:Concat:" type="V_WString" />
+                <Field name="20162017" size="2048" source="CrossTab:Header:Season:20162017:Concat:" type="V_WString" />
+                <Field name="20172018" size="2048" source="CrossTab:Header:Season:20172018:Concat:" type="V_WString" />
+                <Field name="20182019" size="2048" source="CrossTab:Header:Season:20182019:Concat:" type="V_WString" />
+                <Field name="20192020" size="2048" source="CrossTab:Header:Season:20192020:Concat:" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="258" y="138" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="1" field="Value" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Value = 1
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Season" size="254" source="File: C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\seasons_list.csv" type="V_WString" />
+                <Field name="Value" size="1073741823" source="Formula: 1" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="498" y="210" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="17" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output26" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="46" Connection="Input13" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Teams" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="22" Connection="Question" />
+      <Destination ToolID="39" Connection="Question" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="22" Connection="Question Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="39" Connection="Action" />
+      <Destination ToolID="43" Connection="Action" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Drop Down (22)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>2. pick rosters from selected season</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="39" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>20012002</ReplaceText>
+              <Destination>43/Data/r/c</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (19)</Name>
+          <ToolId value="19" />
+          <Questions>
+            <Question>
+              <Type>ListBox</Type>
+              <Description>Drop Down (22)</Description>
+              <Name>Drop Down (22)</Name>
+              <ToolId value="22" />
+              <Multiple value="False" />
+              <Default />
+              <Mode>Field</Mode>
+              <Field_ToolId value="23" />
+              <Field_ConnectionName />
+              <Field_Connection>Output</Field_Connection>
+              <Field_IsOutput value="True" />
+              <Field_IncludeNone value="False" />
+              <Field_FilterTypes>Bool,Byte,Int16,Int32,Int64,FixedDecimal,Float,Double,String,WString,V_String,V_WString,Date,Time,DateTime,Blob,SpatialObj</Field_FilterTypes>
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Wizard</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="0" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="16" Selected="True" />
+        <Tool ToolId="17" Selected="True" />
+        <Tool ToolId="21" Selected="True" />
+        <Tool ToolId="27" Selected="False" />
+        <Tool ToolId="46" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

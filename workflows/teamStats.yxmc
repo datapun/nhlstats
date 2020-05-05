@@ -1,0 +1,739 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="114" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="URL" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://statsapi.web.nhl.com/api/v1/teams/23?expand=team.stats</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="246" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>URL</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="URL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="URL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <Password />
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="378" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="498" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>JSON_Name</RootName>
+          <Delimeters value="." />
+          <NumFields value="8" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name5" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name7" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name8" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="690" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="URL" selected="False" />
+            <SelectField field="DownloadHeaders" selected="False" />
+            <SelectField field="JSON_Name" selected="False" />
+            <SelectField field="JSON_Name1" selected="False" />
+            <SelectField field="JSON_Name2" selected="False" />
+            <SelectField field="JSON_Name3" selected="False" />
+            <SelectField field="JSON_Name4" selected="False" />
+            <SelectField field="JSON_Name5" selected="False" />
+            <SelectField field="JSON_Name6" selected="True" />
+            <SelectField field="JSON_Name7" selected="False" />
+            <SelectField field="JSON_Name8" selected="True" rename="Stat" />
+            <SelectField field="JSON_ValueString" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="Stat" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field name="JSON_ValueString" source="JSONParse: " type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="594" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>JSON_Name7</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-03-08 18:01:46</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>stat</Operand>
+              <StartDate>2020-03-08 18:01:46</StartDate>
+              <EndDate>2020-03-08 18:01:46</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name7] = "stat"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name5" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name7" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name8" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name5" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name7" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name8" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="882" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="JSON_Name6" />
+          </GroupFields>
+          <HeaderField field="Stat" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="evGGARatio" source="JSONParse: " type="Double" />
+            <Field name="faceOffsLost" source="JSONParse: " type="Double" />
+            <Field name="faceOffsTaken" source="JSONParse: " type="Double" />
+            <Field name="faceOffsWon" source="JSONParse: " type="Double" />
+            <Field name="faceOffWinPercentage" source="JSONParse: " type="Double" />
+            <Field name="gamesPlayed" source="JSONParse: " type="Double" />
+            <Field name="goalsAgainstPerGame" source="JSONParse: " type="Double" />
+            <Field name="goalsPerGame" source="JSONParse: " type="Double" />
+            <Field name="losses" source="JSONParse: " type="Double" />
+            <Field name="ot" source="JSONParse: " type="Double" />
+            <Field name="penaltyKillOpportunities" source="JSONParse: " type="Double" />
+            <Field name="penaltyKillPercentage" source="JSONParse: " type="Double" />
+            <Field name="powerPlayGoals" source="JSONParse: " type="Double" />
+            <Field name="powerPlayGoalsAgainst" source="JSONParse: " type="Double" />
+            <Field name="powerPlayOpportunities" source="JSONParse: " type="Double" />
+            <Field name="powerPlayPercentage" source="JSONParse: " type="Double" />
+            <Field name="ptPctg" source="JSONParse: " type="Double" />
+            <Field name="pts" source="JSONParse: " type="Double" />
+            <Field name="savePctg" source="JSONParse: " type="Double" />
+            <Field name="shootingPctg" source="JSONParse: " type="Double" />
+            <Field name="shotsAllowed" source="JSONParse: " type="Double" />
+            <Field name="shotsPerGame" source="JSONParse: " type="Double" />
+            <Field name="winLeadFirstPer" source="JSONParse: " type="Double" />
+            <Field name="winLeadSecondPer" source="JSONParse: " type="Double" />
+            <Field name="winOppScoreFirst" source="JSONParse: " type="Double" />
+            <Field name="winOutshootOpp" source="JSONParse: " type="Double" />
+            <Field name="winOutshotByOpp" source="JSONParse: " type="Double" />
+            <Field name="wins" source="JSONParse: " type="Double" />
+            <Field name="winScoreFirst" source="JSONParse: " type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="JSON_Name6" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="594" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>JSON_Name3</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-03-08 18:03:39</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>id</Operand>
+              <StartDate>2020-03-08 18:03:39</StartDate>
+              <EndDate>2020-03-08 18:03:39</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name3] = "id"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name5" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name7" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name8" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="URL" size="62" source="TextInput:" type="String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name4" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name5" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name7" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name8" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="702" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="JSON_ValueString" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="978" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_JSON_ValueString" selected="True" rename="teamid" input="Source_" />
+                <SelectField field="Target_JSON_Name6" selected="True" rename="Stat Type" input="Target_" />
+                <SelectField field="Target_evGGARatio" selected="True" input="Target_" />
+                <SelectField field="Target_faceOffsLost" selected="True" input="Target_" />
+                <SelectField field="Target_faceOffsTaken" selected="True" input="Target_" />
+                <SelectField field="Target_faceOffsWon" selected="True" input="Target_" />
+                <SelectField field="Target_faceOffWinPercentage" selected="True" input="Target_" />
+                <SelectField field="Target_gamesPlayed" selected="True" input="Target_" />
+                <SelectField field="Target_goalsAgainstPerGame" selected="True" input="Target_" />
+                <SelectField field="Target_goalsPerGame" selected="True" input="Target_" />
+                <SelectField field="Target_losses" selected="True" input="Target_" />
+                <SelectField field="Target_ot" selected="True" input="Target_" />
+                <SelectField field="Target_penaltyKillOpportunities" selected="True" input="Target_" />
+                <SelectField field="Target_penaltyKillPercentage" selected="True" input="Target_" />
+                <SelectField field="Target_powerPlayGoals" selected="True" input="Target_" />
+                <SelectField field="Target_powerPlayGoalsAgainst" selected="True" input="Target_" />
+                <SelectField field="Target_powerPlayOpportunities" selected="True" input="Target_" />
+                <SelectField field="Target_powerPlayPercentage" selected="True" input="Target_" />
+                <SelectField field="Target_ptPctg" selected="True" input="Target_" />
+                <SelectField field="Target_pts" selected="True" input="Target_" />
+                <SelectField field="Target_savePctg" selected="True" input="Target_" />
+                <SelectField field="Target_shootingPctg" selected="True" input="Target_" />
+                <SelectField field="Target_shotsAllowed" selected="True" input="Target_" />
+                <SelectField field="Target_shotsPerGame" selected="True" input="Target_" />
+                <SelectField field="Target_winLeadFirstPer" selected="True" input="Target_" />
+                <SelectField field="Target_winLeadSecondPer" selected="True" input="Target_" />
+                <SelectField field="Target_winOppScoreFirst" selected="True" input="Target_" />
+                <SelectField field="Target_winOutshootOpp" selected="True" input="Target_" />
+                <SelectField field="Target_winOutshotByOpp" selected="True" input="Target_" />
+                <SelectField field="Target_wins" selected="True" input="Target_" />
+                <SelectField field="Target_winScoreFirst" selected="True" input="Target_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="Stat Type" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="evGGARatio" source="JSONParse: " type="Double" />
+            <Field name="faceOffsLost" source="JSONParse: " type="Double" />
+            <Field name="faceOffsTaken" source="JSONParse: " type="Double" />
+            <Field name="faceOffsWon" source="JSONParse: " type="Double" />
+            <Field name="faceOffWinPercentage" source="JSONParse: " type="Double" />
+            <Field name="gamesPlayed" source="JSONParse: " type="Double" />
+            <Field name="goalsAgainstPerGame" source="JSONParse: " type="Double" />
+            <Field name="goalsPerGame" source="JSONParse: " type="Double" />
+            <Field name="losses" source="JSONParse: " type="Double" />
+            <Field name="ot" source="JSONParse: " type="Double" />
+            <Field name="penaltyKillOpportunities" source="JSONParse: " type="Double" />
+            <Field name="penaltyKillPercentage" source="JSONParse: " type="Double" />
+            <Field name="powerPlayGoals" source="JSONParse: " type="Double" />
+            <Field name="powerPlayGoalsAgainst" source="JSONParse: " type="Double" />
+            <Field name="powerPlayOpportunities" source="JSONParse: " type="Double" />
+            <Field name="powerPlayPercentage" source="JSONParse: " type="Double" />
+            <Field name="ptPctg" source="JSONParse: " type="Double" />
+            <Field name="pts" source="JSONParse: " type="Double" />
+            <Field name="savePctg" source="JSONParse: " type="Double" />
+            <Field name="shootingPctg" source="JSONParse: " type="Double" />
+            <Field name="shotsAllowed" source="JSONParse: " type="Double" />
+            <Field name="shotsPerGame" source="JSONParse: " type="Double" />
+            <Field name="winLeadFirstPer" source="JSONParse: " type="Double" />
+            <Field name="winLeadSecondPer" source="JSONParse: " type="Double" />
+            <Field name="winOppScoreFirst" source="JSONParse: " type="Double" />
+            <Field name="winOutshootOpp" source="JSONParse: " type="Double" />
+            <Field name="winOutshotByOpp" source="JSONParse: " type="Double" />
+            <Field name="wins" source="JSONParse: " type="Double" />
+            <Field name="winScoreFirst" source="JSONParse: " type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="786" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Switch([Stat],[Stat],'savePctRank','savePctg','shootingPctRank','shootingPctg')" field="Stat" size="1073741823" type="V_WString" />
+            <FormulaField expression="IIF([JSON_Name6]='0','Numbers','Rank')" field="JSON_Name6" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Stat = Switch([Stat],[Stat],'savePctRank','savePctg','shootingPctRank','shooting...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="1073741823" source="Formula: IIF([JSON_Name6]='0','Numbers'..." type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="Stat" size="1073741823" source="Formula: Switch([Stat],[Stat],'savePctR..." type="V_WString" />
+            <Field name="JSON_ValueString" source="JSONParse: " type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1098" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output16</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.ControlParam.ControlParam">
+        <Position x="54" y="54" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="114" y="126" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="12" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="17" Connection="Question" />
+      <Destination ToolID="18" Connection="Question" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="18" Connection="Action" />
+      <Destination ToolID="1" Connection="Action" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>ControlParam.Control Parameter (17)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>teamStats</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="18" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>23</ReplaceText>
+              <Destination>1/Data/r/c</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (15)</Name>
+          <ToolId value="15" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (16)</Description>
+              <Name>Macro Output (16)</Name>
+              <ToolId value="16" />
+            </Question>
+            <Question>
+              <Type>ControlParam</Type>
+              <Description>Control Parameter (17)</Description>
+              <Name>Control Parameter (17)</Name>
+              <ToolId value="17" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <BatchMacro>
+        <OutputMode>AllSame</OutputMode>
+        <ControlParams>
+          <ControlParam>
+            <Name>Control Parameter (17)</Name>
+            <Description>Control Parameter (17)</Description>
+          </ControlParam>
+        </ControlParams>
+      </BatchMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="16" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

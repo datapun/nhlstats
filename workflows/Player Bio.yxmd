@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="102" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\list_players_20192020.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>list_players_20192020.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="teamid" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="CrossTab:Group:Concat:" type="Int64" />
+            <Field name="roster_jerseyNumber" size="2048" source="CrossTab:Header:col_name:roster_jerseyNumber:Concat:" type="V_WString" />
+            <Field name="roster_person_fullName" size="2048" source="CrossTab:Header:col_name:roster_person_fullName:Concat:" type="V_WString" />
+            <Field name="roster_person_id" size="2048" source="CrossTab:Header:col_name:roster_person_id:Concat:" type="V_WString" />
+            <Field name="roster_person_link" size="2048" source="CrossTab:Header:col_name:roster_person_link:Concat:" type="V_WString" />
+            <Field name="roster_position_abbreviation" size="2048" source="CrossTab:Header:col_name:roster_position_abbreviation:Concat:" type="V_WString" />
+            <Field name="roster_position_code" size="2048" source="CrossTab:Header:col_name:roster_position_code:Concat:" type="V_WString" />
+            <Field name="roster_position_name" size="2048" source="CrossTab:Header:col_name:roster_position_name:Concat:" type="V_WString" />
+            <Field name="roster_position_type" size="2048" source="CrossTab:Header:col_name:roster_position_type:Concat:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="294" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Team Name" selected="True" />
+            <SelectField field="roster_person_fullName" selected="True" />
+            <SelectField field="roster_person_id" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="390" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'http://statsapi.web.nhl.com/api/v1/people/'+[roster_person_id]" field="URL" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[URL = 'http://statsapi.web.nhl.com/api/v1/people/'+[roster_person_id]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="486" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>URL</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="Team Name" selected="False" />
+              <Field name="roster_person_fullName" selected="False" />
+              <Field name="roster_person_id" selected="False" />
+              <Field name="URL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="Team Name" />
+              <Field name="roster_person_fullName" />
+              <Field name="roster_person_id" selected="False" />
+              <Field name="URL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <Password />
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="594" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="702" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>JSON_Name</RootName>
+          <Delimeters value="." />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="822" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Team Name" selected="True" />
+            <SelectField field="roster_person_fullName" selected="True" />
+            <SelectField field="roster_person_id" selected="True" />
+            <SelectField field="JSON_ValueString" selected="True" />
+            <SelectField field="JSON_Name3" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="918" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Team Name" />
+            <Field field="roster_person_fullName" />
+            <Field field="roster_person_id" />
+          </GroupFields>
+          <HeaderField field="JSON_Name3" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="Concat" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Team Name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="roster_person_fullName" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="roster_person_id" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="_Null_" size="2048" source="CrossTab:Header:JSON_Name3:[Null]:Concat:" type="V_WString" />
+            <Field name="active" size="2048" source="CrossTab:Header:JSON_Name3:active:Concat:" type="V_WString" />
+            <Field name="alternateCaptain" size="2048" source="CrossTab:Header:JSON_Name3:alternateCaptain:Concat:" type="V_WString" />
+            <Field name="birthCity" size="2048" source="CrossTab:Header:JSON_Name3:birthCity:Concat:" type="V_WString" />
+            <Field name="birthCountry" size="2048" source="CrossTab:Header:JSON_Name3:birthCountry:Concat:" type="V_WString" />
+            <Field name="birthDate" size="2048" source="CrossTab:Header:JSON_Name3:birthDate:Concat:" type="V_WString" />
+            <Field name="birthStateProvince" size="2048" source="CrossTab:Header:JSON_Name3:birthStateProvince:Concat:" type="V_WString" />
+            <Field name="captain" size="2048" source="CrossTab:Header:JSON_Name3:captain:Concat:" type="V_WString" />
+            <Field name="currentAge" size="2048" source="CrossTab:Header:JSON_Name3:currentAge:Concat:" type="V_WString" />
+            <Field name="currentTeam_id" size="2048" source="CrossTab:Header:JSON_Name3:currentTeam.id:Concat:" type="V_WString" />
+            <Field name="currentTeam_link" size="2048" source="CrossTab:Header:JSON_Name3:currentTeam.link:Concat:" type="V_WString" />
+            <Field name="currentTeam_name" size="2048" source="CrossTab:Header:JSON_Name3:currentTeam.name:Concat:" type="V_WString" />
+            <Field name="firstName" size="2048" source="CrossTab:Header:JSON_Name3:firstName:Concat:" type="V_WString" />
+            <Field name="fullName" size="2048" source="CrossTab:Header:JSON_Name3:fullName:Concat:" type="V_WString" />
+            <Field name="height" size="2048" source="CrossTab:Header:JSON_Name3:height:Concat:" type="V_WString" />
+            <Field name="id" size="2048" source="CrossTab:Header:JSON_Name3:id:Concat:" type="V_WString" />
+            <Field name="lastName" size="2048" source="CrossTab:Header:JSON_Name3:lastName:Concat:" type="V_WString" />
+            <Field name="link" size="2048" source="CrossTab:Header:JSON_Name3:link:Concat:" type="V_WString" />
+            <Field name="nationality" size="2048" source="CrossTab:Header:JSON_Name3:nationality:Concat:" type="V_WString" />
+            <Field name="primaryNumber" size="2048" source="CrossTab:Header:JSON_Name3:primaryNumber:Concat:" type="V_WString" />
+            <Field name="primaryPosition_abbreviation" size="2048" source="CrossTab:Header:JSON_Name3:primaryPosition.abbreviation:Concat:" type="V_WString" />
+            <Field name="primaryPosition_code" size="2048" source="CrossTab:Header:JSON_Name3:primaryPosition.code:Concat:" type="V_WString" />
+            <Field name="primaryPosition_name" size="2048" source="CrossTab:Header:JSON_Name3:primaryPosition.name:Concat:" type="V_WString" />
+            <Field name="primaryPosition_type" size="2048" source="CrossTab:Header:JSON_Name3:primaryPosition.type:Concat:" type="V_WString" />
+            <Field name="rookie" size="2048" source="CrossTab:Header:JSON_Name3:rookie:Concat:" type="V_WString" />
+            <Field name="rosterStatus" size="2048" source="CrossTab:Header:JSON_Name3:rosterStatus:Concat:" type="V_WString" />
+            <Field name="shootsCatches" size="2048" source="CrossTab:Header:JSON_Name3:shootsCatches:Concat:" type="V_WString" />
+            <Field name="weight" size="2048" source="CrossTab:Header:JSON_Name3:weight:Concat:" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Team Name" order="Asc" />
+            <Field field="roster_person_fullName" order="Asc" />
+            <Field field="roster_person_id" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1037" y="28" width="161.7782" height="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 11</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1062" y="78" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\player_bio.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>player_bio.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Player Bio</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

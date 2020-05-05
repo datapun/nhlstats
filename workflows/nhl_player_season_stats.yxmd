@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2019.3">
+<AlteryxDocument yxmdVer="2019.4">
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
@@ -8,18 +8,22 @@
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\list_players.yxdb</File>
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\list_players_19981999.yxdb</File>
           <FormatSpecificOptions />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>list_players.yxdb</DefaultAnnotationText>
+          <DefaultAnnotationText>list_players_19981999.yxdb</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_id" source="CrossTab:Group:Concat:" type="Int64" />
-            <Field name="teams_name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="teamid" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
             <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="CrossTab:Group:Concat:" type="Int64" />
             <Field name="roster_jerseyNumber" size="2048" source="CrossTab:Header:col_name:roster_jerseyNumber:Concat:" type="V_WString" />
             <Field name="roster_person_fullName" size="2048" source="CrossTab:Header:col_name:roster_person_fullName:Concat:" type="V_WString" />
@@ -36,15 +40,16 @@
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="174" y="54" />
+        <Position x="246" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
-            <SelectField field="teams_id" selected="True" />
-            <SelectField field="teams_name" selected="True" />
+            <SelectField field="teamid" selected="True" />
+            <SelectField field="Team Name" selected="True" />
+            <SelectField field="Season" selected="True" />
             <SelectField field="roster_person_fullName" selected="True" rename="PlayerName" />
             <SelectField field="roster_person_link" selected="True" />
             <SelectField field="roster_position_code" selected="True" />
@@ -61,12 +66,12 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="294" y="54" />
+        <Position x="342" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="'https://statsapi.web.nhl.com'&#xA;+[roster_person_link]+'/stats?stats=statsSingleSeason&amp;season=20182019'" field="player_season_stats_URL" size="1073741823" type="V_WString" />
+            <FormulaField expression="'https://statsapi.web.nhl.com'&#xA;+[roster_person_link]+'/stats?stats=statsSingleSeason&amp;season='+season" field="player_season_stats_URL" size="1073741823" type="V_WString" />
             <FormulaField expression="Right([roster_person_link],Length([roster_person_link])-&#xA;(FindString([roster_person_link], 'people/')&#xA;+Length('people/')))" field="player_id" size="1073741823" type="V_WString" />
           </FormulaFields>
         </Configuration>
@@ -92,7 +97,9 @@
           <Headers>
             <NameValues />
             <Fields orderChanged="False">
-              <Field name="teams_name" selected="False" />
+              <Field name="teamid" selected="False" />
+              <Field name="Team Name" selected="False" />
+              <Field name="Season" selected="False" />
               <Field name="PlayerName" selected="False" />
               <Field name="roster_person_link" selected="False" />
               <Field name="roster_position_code" selected="False" />
@@ -106,7 +113,9 @@
             <QueryStringBodyMode>Compose</QueryStringBodyMode>
             <ComposeNameValues />
             <ComposeFields orderChanged="False">
-              <Field name="teams_name" selected="False" />
+              <Field name="teamid" selected="False" />
+              <Field name="Team Name" selected="False" />
+              <Field name="Season" selected="False" />
               <Field name="PlayerName" selected="False" />
               <Field name="roster_person_link" selected="False" />
               <Field name="roster_position_code" selected="False" />
@@ -174,10 +183,17 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <OrderChanged value="False" />
+          <OrderChanged value="True" />
           <CommaDecimal value="False" />
           <SelectFields>
-            <SelectField field="teams_id" selected="False" />
+            <SelectField field="teamid" selected="True" />
+            <SelectField field="Team Name" selected="True" />
+            <SelectField field="Season" selected="True" />
+            <SelectField field="PlayerName" selected="True" />
+            <SelectField field="roster_position_code" selected="True" />
+            <SelectField field="player_id" selected="True" />
+            <SelectField field="JSON_Name" selected="True" />
+            <SelectField field="JSON_ValueString" selected="True" />
             <SelectField field="roster_person_link" selected="False" />
             <SelectField field="player_season_stats_URL" selected="False" />
             <SelectField field="DownloadHeaders" selected="False" />
@@ -226,7 +242,9 @@
       <Properties>
         <Configuration>
           <GroupFields>
-            <Field field="teams_name" />
+            <Field field="teamid" />
+            <Field field="Team Name" />
+            <Field field="Season" />
             <Field field="PlayerName" />
             <Field field="roster_position_code" />
             <Field field="player_id" />
@@ -246,7 +264,9 @@
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="teamid" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
             <Field name="PlayerName" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
             <Field name="roster_position_code" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
             <Field name="player_id" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
@@ -258,13 +278,12 @@
             <Field name="goalAgainstAverage" size="2050" source="CrossTab:Header:col_name:goalAgainstAverage:Concat:" type="V_WString" />
             <Field name="goalsAgainst" size="2050" source="CrossTab:Header:col_name:goalsAgainst:Concat:" type="V_WString" />
             <Field name="losses" size="2050" source="CrossTab:Header:col_name:losses:Concat:" type="V_WString" />
-            <Field name="ot" size="2050" source="CrossTab:Header:col_name:ot:Concat:" type="V_WString" />
             <Field name="powerPlaySavePercentage" size="2050" source="CrossTab:Header:col_name:powerPlaySavePercentage:Concat:" type="V_WString" />
             <Field name="powerPlaySaves" size="2050" source="CrossTab:Header:col_name:powerPlaySaves:Concat:" type="V_WString" />
             <Field name="powerPlayShots" size="2050" source="CrossTab:Header:col_name:powerPlayShots:Concat:" type="V_WString" />
             <Field name="savePercentage" size="2050" source="CrossTab:Header:col_name:savePercentage:Concat:" type="V_WString" />
             <Field name="saves" size="2050" source="CrossTab:Header:col_name:saves:Concat:" type="V_WString" />
-            <Field name="season" size="2050" source="CrossTab:Header:col_name:season:Concat:" type="V_WString" />
+            <Field name="season2" size="2050" source="CrossTab:Header:col_name:season:Concat:" type="V_WString" />
             <Field name="shortHandedSavePercentage" size="2050" source="CrossTab:Header:col_name:shortHandedSavePercentage:Concat:" type="V_WString" />
             <Field name="shortHandedSaves" size="2050" source="CrossTab:Header:col_name:shortHandedSaves:Concat:" type="V_WString" />
             <Field name="shortHandedShots" size="2050" source="CrossTab:Header:col_name:shortHandedShots:Concat:" type="V_WString" />
@@ -276,7 +295,9 @@
             <Field name="wins" size="2050" source="CrossTab:Header:col_name:wins:Concat:" type="V_WString" />
           </RecordInfo>
           <SortInfo>
-            <Field field="teams_name" order="Asc" />
+            <Field field="teamid" order="Asc" />
+            <Field field="Team Name" order="Asc" />
+            <Field field="Season" order="Asc" />
             <Field field="PlayerName" order="Asc" />
             <Field field="roster_position_code" order="Asc" />
             <Field field="player_id" order="Asc" />
@@ -295,21 +316,6 @@
 and [JSON_Name]!='link'
 and [JSON_ValueString]!='statssingleseason'</Expression>
           <Mode>Custom</Mode>
-          <Simple>
-            <Operator>!=</Operator>
-            <Field>JSON_Name</Field>
-            <Operands>
-              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
-              <DateType>fixed</DateType>
-              <PeriodDate>2019-12-01 19:19:08</PeriodDate>
-              <PeriodType>
-              </PeriodType>
-              <PeriodCount>0</PeriodCount>
-              <Operand>copyright</Operand>
-              <StartDate>2019-12-01 19:19:08</StartDate>
-              <EndDate>2019-12-01 19:19:08</EndDate>
-            </Operands>
-          </Simple>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -327,7 +333,6 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[roster_position_code] = "G"</Expression>
           <Mode>Simple</Mode>
           <Simple>
             <Operator>=</Operator>
@@ -339,9 +344,9 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
               <PeriodType>
               </PeriodType>
               <PeriodCount>0</PeriodCount>
+              <Operand>G</Operand>
               <StartDate>2019-12-01 19:47:20</StartDate>
               <EndDate>2019-12-01 19:47:20</EndDate>
-              <Operand>G</Operand>
             </Operands>
           </Simple>
         </Configuration>
@@ -360,7 +365,9 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <GroupFields>
-            <Field field="teams_name" />
+            <Field field="teamid" />
+            <Field field="Team Name" />
+            <Field field="Season" />
             <Field field="PlayerName" />
             <Field field="roster_position_code" />
             <Field field="player_id" />
@@ -380,7 +387,9 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="teamid" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Team Name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+            <Field name="Season" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
             <Field name="PlayerName" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
             <Field name="roster_position_code" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
             <Field name="player_id" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
@@ -402,7 +411,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
             <Field name="powerPlayPoints" size="2048" source="CrossTab:Header:col_name:powerPlayPoints:Concat:" type="V_WString" />
             <Field name="powerPlayTimeOnIce" size="2048" source="CrossTab:Header:col_name:powerPlayTimeOnIce:Concat:" type="V_WString" />
             <Field name="powerPlayTimeOnIcePerGame" size="2048" source="CrossTab:Header:col_name:powerPlayTimeOnIcePerGame:Concat:" type="V_WString" />
-            <Field name="season" size="2048" source="CrossTab:Header:col_name:season:Concat:" type="V_WString" />
+            <Field name="season2" size="2048" source="CrossTab:Header:col_name:season:Concat:" type="V_WString" />
             <Field name="shifts" size="2048" source="CrossTab:Header:col_name:shifts:Concat:" type="V_WString" />
             <Field name="shortHandedGoals" size="2048" source="CrossTab:Header:col_name:shortHandedGoals:Concat:" type="V_WString" />
             <Field name="shortHandedPoints" size="2048" source="CrossTab:Header:col_name:shortHandedPoints:Concat:" type="V_WString" />
@@ -414,7 +423,9 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
             <Field name="timeOnIcePerGame" size="2048" source="CrossTab:Header:col_name:timeOnIcePerGame:Concat:" type="V_WString" />
           </RecordInfo>
           <SortInfo>
-            <Field field="teams_name" order="Asc" />
+            <Field field="teamid" order="Asc" />
+            <Field field="Team Name" order="Asc" />
+            <Field field="Season" order="Asc" />
             <Field field="PlayerName" order="Asc" />
             <Field field="roster_position_code" order="Asc" />
             <Field field="player_id" order="Asc" />
@@ -469,8 +480,10 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_name" size="17" source="CrossTab:Group:Concat:" type="String" />
-            <Field name="PlayerName" size="16" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="teamid" source="CrossTab:Group:Concat:" type="Byte" />
+            <Field name="Team Name" size="19" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="Season" source="CrossTab:Group:Concat:" type="Int32" />
+            <Field name="PlayerName" size="15" source="CrossTab:Group:Concat:" type="String" />
             <Field name="roster_position_code" size="1" source="CrossTab:Group:Concat:" type="String" />
             <Field name="player_id" source="CrossTab:Group:Concat:" type="Int32" />
             <Field name="evenSaves" source="CrossTab:Header:col_name:evenSaves:Concat:" type="Int16" />
@@ -481,14 +494,13 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
             <Field name="goalAgainstAverage" source="CrossTab:Header:col_name:goalAgainstAverage:Concat:" type="Double" />
             <Field name="goalsAgainst" source="CrossTab:Header:col_name:goalsAgainst:Concat:" type="Byte" />
             <Field name="losses" source="CrossTab:Header:col_name:losses:Concat:" type="Byte" />
-            <Field name="ot" source="CrossTab:Header:col_name:ot:Concat:" type="Byte" />
             <Field name="powerPlaySavePercentage" source="CrossTab:Header:col_name:powerPlaySavePercentage:Concat:" type="Double" />
-            <Field name="powerPlaySaves" source="CrossTab:Header:col_name:powerPlaySaves:Concat:" type="Byte" />
-            <Field name="powerPlayShots" source="CrossTab:Header:col_name:powerPlayShots:Concat:" type="Byte" />
+            <Field name="powerPlaySaves" source="CrossTab:Header:col_name:powerPlaySaves:Concat:" type="Int16" />
+            <Field name="powerPlayShots" source="CrossTab:Header:col_name:powerPlayShots:Concat:" type="Int16" />
             <Field name="savePercentage" source="CrossTab:Header:col_name:savePercentage:Concat:" type="Double" />
             <Field name="saves" source="CrossTab:Header:col_name:saves:Concat:" type="Int16" />
-            <Field name="season" source="CrossTab:Header:col_name:season:Concat:" type="Int32" />
-            <Field name="shortHandedSavePercentage" source="CrossTab:Header:col_name:shortHandedSavePercentage:Concat:" type="Double" />
+            <Field name="season2" source="CrossTab:Header:col_name:season:Concat:" type="Int32" />
+            <Field name="shortHandedSavePercentage" size="16" source="CrossTab:Header:col_name:shortHandedSavePercentage:Concat:" type="V_String" />
             <Field name="shortHandedSaves" source="CrossTab:Header:col_name:shortHandedSaves:Concat:" type="Byte" />
             <Field name="shortHandedShots" source="CrossTab:Header:col_name:shortHandedShots:Concat:" type="Byte" />
             <Field name="shotsAgainst" source="CrossTab:Header:col_name:shotsAgainst:Concat:" type="Int16" />
@@ -552,8 +564,10 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="teams_name" size="17" source="CrossTab:Group:Concat:" type="String" />
-            <Field name="PlayerName" size="19" source="CrossTab:Group:Concat:" type="V_String" />
+            <Field name="teamid" source="CrossTab:Group:Concat:" type="Byte" />
+            <Field name="Team Name" size="19" source="CrossTab:Group:Concat:" type="String" />
+            <Field name="Season" source="CrossTab:Group:Concat:" type="Int32" />
+            <Field name="PlayerName" size="18" source="CrossTab:Group:Concat:" type="V_String" />
             <Field name="roster_position_code" size="1" source="CrossTab:Group:Concat:" type="String" />
             <Field name="player_id" source="CrossTab:Group:Concat:" type="Int32" />
             <Field name="assists" source="CrossTab:Header:col_name:assists:Concat:" type="Byte" />
@@ -574,7 +588,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
             <Field name="powerPlayPoints" source="CrossTab:Header:col_name:powerPlayPoints:Concat:" type="Byte" />
             <Field name="powerPlayTimeOnIce" size="6" source="CrossTab:Header:col_name:powerPlayTimeOnIce:Concat:" type="String" />
             <Field name="powerPlayTimeOnIcePerGame" size="5" source="CrossTab:Header:col_name:powerPlayTimeOnIcePerGame:Concat:" type="String" />
-            <Field name="season" source="CrossTab:Header:col_name:season:Concat:" type="Int32" />
+            <Field name="season2" source="CrossTab:Header:col_name:season:Concat:" type="Int32" />
             <Field name="shifts" source="CrossTab:Header:col_name:shifts:Concat:" type="Int16" />
             <Field name="shortHandedGoals" source="CrossTab:Header:col_name:shortHandedGoals:Concat:" type="Byte" />
             <Field name="shortHandedPoints" source="CrossTab:Header:col_name:shortHandedPoints:Concat:" type="Byte" />
@@ -598,6 +612,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
           <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
+            <SelectField field="season2" selected="False" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
@@ -618,6 +633,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
           <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
+            <SelectField field="season2" selected="False" />
             <SelectField field="*Unknown" selected="True" />
           </SelectFields>
         </Configuration>
@@ -664,7 +680,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     </Node>
     <Node ToolID="28">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1398" y="150" />
+        <Position x="1458" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -688,9 +704,6 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
           <DefaultAnnotationText>goalie_stats.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -720,15 +733,12 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
           <DefaultAnnotationText>player_stats.csv</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="30">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1362" y="258" />
+        <Position x="1374" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -783,11 +793,29 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="138" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Random</Mode>
+          <N>25</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Random 1 in 25</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="2" Connection="Input" />
+      <Destination ToolID="33" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="2" Connection="Output" />
@@ -869,6 +897,10 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
       <Origin ToolID="32" Connection="Output" />
       <Destination ToolID="20" Connection="Input" />
     </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
   </Connections>
   <Properties>
     <Memory default="True" />
@@ -880,7 +912,7 @@ and [JSON_ValueString]!='stat...</DefaultAnnotationText>
     <CancelOnError value="False" />
     <DisableBrowse value="False" />
     <EnablePerformanceProfiling value="False" />
-    <DisableAllOutput value="False" />
+    <DisableAllOutput value="True" />
     <ShowAllMacroMessages value="False" />
     <ShowConnectionStatusIsOn value="True" />
     <ShowConnectionStatusOnlyWhenRunning value="True" />

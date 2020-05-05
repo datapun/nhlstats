@@ -1,0 +1,484 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.1">
+  <Nodes>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="101" y="148" width="1333" height="226" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>team names and rosters</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+            <Position x="498" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <URLField>RosterURL</URLField>
+              <OutputMode>String</OutputMode>
+              <CodePage>65001</CodePage>
+              <EncodeURLs value="True" />
+              <Headers>
+                <NameValues />
+                <Fields orderChanged="False">
+                  <Field name="Season" selected="False" />
+                  <Field name="teamid" selected="False" />
+                  <Field name="Team Abbreviation" selected="False" />
+                  <Field name="Team Name" selected="False" />
+                  <Field name="Team Nickname" selected="False" />
+                  <Field name="division_id" selected="False" />
+                  <Field name="division_name" selected="False" />
+                  <Field name="conference_id" selected="False" />
+                  <Field name="conference_name" selected="False" />
+                  <Field name="RosterURL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </Fields>
+              </Headers>
+              <Payload>
+                <HTTPAction>GET</HTTPAction>
+                <QueryStringBodyMode>Compose</QueryStringBodyMode>
+                <ComposeNameValues />
+                <ComposeFields orderChanged="False">
+                  <Field name="Season" selected="False" />
+                  <Field name="teamid" selected="False" />
+                  <Field name="Team Abbreviation" selected="False" />
+                  <Field name="Team Name" selected="False" />
+                  <Field name="Team Nickname" selected="False" />
+                  <Field name="division_id" selected="False" />
+                  <Field name="division_name" selected="False" />
+                  <Field name="conference_id" selected="False" />
+                  <Field name="conference_name" selected="False" />
+                  <Field name="RosterURL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </ComposeFields>
+              </Payload>
+              <UserName />
+              <Password />
+              <numConnections>2</numConnections>
+              <Timeout>600</Timeout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+            <Position x="594" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON_Field>DownloadData</JSON_Field>
+              <IncludeInOutput value="False" />
+              <SingleField value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+        </Node>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="774" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>JSON_Name</Field>
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>
+              </RootName>
+              <Delimeters value="." />
+              <NumFields value="4" />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="678" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="RosterURL" selected="False" />
+                <SelectField field="DownloadHeaders" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="402" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="'https://statsapi.web.nhl.com/api/v1/teams/'&#xA;+ [teamid] +&#xA;'/roster?season='+[Season]" field="RosterURL" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>RosterURL</AnnotationText>
+              <DefaultAnnotationText>RosterURL = 'https://statsapi.web.nhl.com/api/v1/teams/'
++ [teamid] +
+'/roster?s...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="966" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="JSON_Name" selected="False" />
+                <SelectField field="2" selected="True" rename="rowID" type="Int64" size="8" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1062" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[1]+' '+[3]+' '+[4]" field="col_name" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[col_name = [1]+' '+[3]+' '+[4]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="1350" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="Season" />
+                <Field field="teamid" />
+                <Field field="Team Name" />
+                <Field field="rowID" />
+                <Field field="SeasonSuffix" />
+              </GroupFields>
+              <HeaderField field="col_name" />
+              <DataField field="JSON_ValueString" />
+              <Methods>
+                <Method method="Concat" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Season" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="teamid" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="Team Name" size="2048" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="rowID" source="CrossTab:Group:Concat:" type="Int64" />
+                <Field name="SeasonSuffix" size="1073741823" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="roster_jerseyNumber" size="2048" source="CrossTab:Header:col_name:roster_jerseyNumber:Concat:" type="V_WString" />
+                <Field name="roster_person_fullName" size="2048" source="CrossTab:Header:col_name:roster_person_fullName:Concat:" type="V_WString" />
+                <Field name="roster_person_id" size="2048" source="CrossTab:Header:col_name:roster_person_id:Concat:" type="V_WString" />
+                <Field name="roster_person_link" size="2048" source="CrossTab:Header:col_name:roster_person_link:Concat:" type="V_WString" />
+                <Field name="roster_position_abbreviation" size="2048" source="CrossTab:Header:col_name:roster_position_abbreviation:Concat:" type="V_WString" />
+                <Field name="roster_position_code" size="2048" source="CrossTab:Header:col_name:roster_position_code:Concat:" type="V_WString" />
+                <Field name="roster_position_name" size="2048" source="CrossTab:Header:col_name:roster_position_name:Concat:" type="V_WString" />
+                <Field name="roster_position_type" size="2048" source="CrossTab:Header:col_name:roster_position_type:Concat:" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Season" order="Asc" />
+                <Field field="teamid" order="Asc" />
+                <Field field="Team Name" order="Asc" />
+                <Field field="rowID" order="Asc" />
+                <Field field="SeasonSuffix" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="870" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[JSON_Name] != "copyright"
+and [JSON_Name]!='link'</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings>
+            <Position x="1158" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="List Box (11)">"JSON_ValueString","1","rowID","3","4","col_name"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1254" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="Replace([col_name], ' ', '_')" field="col_name" size="1073741823" type="V_WString" />
+                <FormulaField expression="'_'+[Season]" field="SeasonSuffix" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[col_name = Replace([col_name], ' ', '_')
+SeasonSuffix = '_'+[Season]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="126" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="URL" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>https://statsapi.web.nhl.com/api/v1/teams?season=20192020</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="306" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Team Abbreviation" selected="False" />
+                <SelectField field="Team Nickname" selected="False" />
+                <SelectField field="division_id" selected="False" />
+                <SelectField field="division_name" selected="False" />
+                <SelectField field="conference_id" selected="False" />
+                <SelectField field="conference_name" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings>
+            <Position x="222" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Input.Input19"><![CDATA[URL=URL
+]]></Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="TeamsListMacroOneSeason.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="10" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output26" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="14" Connection="Input19" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Teams" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Team Details Table</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

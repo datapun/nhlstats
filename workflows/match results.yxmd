@@ -1,0 +1,1501 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="URL" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://statsapi.web.nhl.com/api/v1/schedule?season=20192020&amp;expand=schedule.linescore&amp;gameType=R</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="174" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>URL</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="URL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="URL" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <UserName />
+          <Password />
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="270" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="402" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>JSON_Name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>JSON_Name</RootName>
+          <Delimeters value="." />
+          <NumFields value="8" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1458" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="season" selected="True" />
+            <SelectField field="Day No" selected="True" />
+            <SelectField field="Game No" selected="True" />
+            <SelectField field="gamePk" selected="True" />
+            <SelectField field="JSON_Name5" selected="True" />
+            <SelectField field="JSON_Name6" selected="True" />
+            <SelectField field="JSON_Name7" selected="True" />
+            <SelectField field="JSON_Name8" selected="True" />
+            <SelectField field="Value" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1650" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Season" selected="True" size="8" />
+            <SelectField field="Day No" selected="True" size="4" />
+            <SelectField field="Game No" selected="True" size="4" />
+            <SelectField field="JSON_Name5" selected="True" size="10" />
+            <SelectField field="JSON_Name6" selected="True" size="30" />
+            <SelectField field="JSON_Name7" selected="True" size="10" />
+            <SelectField field="JSON_Name8" selected="True" size="30" />
+            <SelectField field="Value" selected="True" size="50" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="690" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="URL" selected="False" />
+            <SelectField field="DownloadHeaders" selected="False" />
+            <SelectField field="JSON_Name" selected="False" />
+            <SelectField field="JSON_ValueString" selected="True" rename="Value" />
+            <SelectField field="JSON_Name1" selected="False" />
+            <SelectField field="JSON_Name2" selected="True" rename="Day No" />
+            <SelectField field="JSON_Name3" selected="False" />
+            <SelectField field="JSON_Name4" selected="True" rename="Game No" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="498" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>JSON_Name4</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-02-18 20:30:53</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2020-02-18 20:30:53</StartDate>
+              <EndDate>2020-02-18 20:30:53</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([JSON_Name4])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1038" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="774" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>JSON_Name5</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-02-18 20:37:10</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>season</Operand>
+              <StartDate>2020-02-18 20:37:10</StartDate>
+              <EndDate>2020-02-18 20:37:10</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name5] = "season"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1170" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Value</UpdateField_Name>
+          <CreateField_Name>GamePk</CreateField_Name>
+          <CreateField_Type>V_WString</CreateField_Type>
+          <CreateField_Size>10</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>if [JSON_Name5]='GamePk' then [Value]
+else [Row-1:GamePk] endif</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>if [JSON_Name5]='GamePk' then [Value]
+else [Row-1:GamePk] endif</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1266" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([JSON_Name6])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IsNull([JSON_Name6])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1554" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>JSON_Name5</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-02-18 20:49:31</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>linescore</Operand>
+              <StartDate>2020-02-18 20:49:31</StartDate>
+              <EndDate>2020-02-18 20:49:31</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name5] = "linescore"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1746" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>JSON_Name6</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-02-18 20:54:02</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>periods</Operand>
+              <StartDate>2020-02-18 20:54:02</StartDate>
+              <EndDate>2020-02-18 20:54:02</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name6] = "periods"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3377" y="172" width="161.7782" height="25" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 70</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="57">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="3402" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\Users\michal.sicak\OneDrive - Slalom\Datapun\NHL_API_v1\data\linescores.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>65001</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="True" />
+              <MultiFileType>Suffix</MultiFileType>
+              <MultiFileField>filesuffix</MultiFileField>
+              <KeepField value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>linescores.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1686" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[JSON_Name7] = "score"
+or [JSON_Name8]='id'</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[JSON_Name7] = "score"
+or [JSON_Name8]='id'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1854" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Day No" selected="False" />
+            <SelectField field="Game No" selected="False" />
+            <SelectField field="JSON_Name5" selected="False" />
+            <SelectField field="JSON_Name6" selected="False" />
+            <SelectField field="JSON_Name8" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1974" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="Season" />
+            <Field field="GamePk" />
+          </GroupFields>
+          <HeaderField field="JSON_Name7" />
+          <DataField field="Value" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Season" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field description="Formula: if [JSON_Name5]='GamePk' then ..." name="GamePk" size="10" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="score" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="team" size="1073741823" source="JSONParse: " type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Season" order="Asc" />
+            <Field field="GamePk" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="821" y="184" width="205" height="134" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>season</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="942" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="Season" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="846" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Value" selected="True" rename="Season" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1829" y="64" width="1453" height="409" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>periods</Caption>
+          <Style TextColor="#314c4a" FillColor="#b3cccc" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="3102" y="270" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="'_'+[Season]" field="filesuffix" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[filesuffix = '_'+[Season]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="3006" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2760_65910325cf58493fba2d2fd4d87d181e_\Engine_12756_6b262ce7e16947ae802df2ef790d366d_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="52">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="2238" y="282.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="Season" />
+                <Field field="Day No" />
+                <Field field="Game No" />
+                <Field field="GamePk" />
+                <Field field="JSON_Name7" />
+              </GroupFields>
+              <HeaderField field="JSON_Name8" />
+              <DataField field="Value" />
+              <Methods>
+                <Method method="Concat" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Season" size="8" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Day No" size="4" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Game No" size="4" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="Formula: if [JSON_Name5]='GamePk' then ..." name="GamePk" size="10" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name7" size="10" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="attempts" size="2048" source="CrossTab:Header:JSON_Name8:attempts:Concat:" type="V_WString" />
+                <Field name="scores" size="2048" source="CrossTab:Header:JSON_Name8:scores:Concat:" type="V_WString" />
+                <Field name="team_id" size="2048" source="CrossTab:Header:JSON_Name8:team.id:Concat:" type="V_WString" />
+                <Field name="team_name" size="2048" source="CrossTab:Header:JSON_Name8:team.name:Concat:" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Season" order="Asc" />
+                <Field field="Day No" order="Asc" />
+                <Field field="Game No" order="Asc" />
+                <Field field="GamePk" order="Asc" />
+                <Field field="JSON_Name7" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="54">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2430" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Season" selected="True" />
+                <SelectField field="Day No" selected="True" />
+                <SelectField field="Game No" selected="True" />
+                <SelectField field="GamePk" selected="True" />
+                <SelectField field="JSON_Name7" selected="True" rename="Home/Away" />
+                <SelectField field="team_id" selected="True" />
+                <SelectField field="team_name" selected="True" />
+                <SelectField field="attempts" selected="True" />
+                <SelectField field="scores" selected="True" rename="SO score" />
+                <SelectField field="Value" selected="True" rename="startTime" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2238" y="137.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="num" selected="True" rename="Period" />
+                <SelectField field="periodType" selected="False" />
+                <SelectField field="Name" selected="False" />
+                <SelectField field="Value" selected="True" rename="Stat" />
+                <SelectField field="Name1" selected="True" rename="Home/Away" />
+                <SelectField field="Name2" selected="True" rename="Stat Name" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="2910" y="210" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="GamePk" />
+                <Field field="Home/Away" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="GamePk" />
+                <Field field="Home/Away" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Season" selected="True" input="Left_" />
+                    <SelectField field="Left_Day No" selected="True" input="Left_" />
+                    <SelectField field="Left_Game No" selected="True" input="Left_" />
+                    <SelectField field="Left_GamePk" selected="True" input="Left_" />
+                    <SelectField field="Right_Season" selected="False" rename="Right_Season" input="Right_" />
+                    <SelectField field="Right_Day No" selected="False" rename="Right_Day No" input="Right_" />
+                    <SelectField field="Right_Game No" selected="False" rename="Right_Game No" input="Right_" />
+                    <SelectField field="Right_GamePk" selected="False" rename="Right_GamePk" input="Right_" />
+                    <SelectField field="Left_Period" selected="True" input="Left_" />
+                    <SelectField field="Left_startTime" selected="True" input="Left_" />
+                    <SelectField field="Left_endTime" selected="True" input="Left_" />
+                    <SelectField field="Right_Home/Away" selected="False" rename="Right_Home/Away" input="Right_" />
+                    <SelectField field="Left_Home/Away" selected="True" input="Left_" />
+                    <SelectField field="Right_team_id" selected="True" input="Right_" />
+                    <SelectField field="Left_Stat Name" selected="True" input="Left_" />
+                    <SelectField field="Left_Stat" selected="True" input="Left_" />
+                    <SelectField field="Right_team_name" selected="True" input="Right_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2046" y="281.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Season" selected="True" />
+                <SelectField field="Day No" selected="True" />
+                <SelectField field="Game No" selected="True" />
+                <SelectField field="GamePk" selected="True" />
+                <SelectField field="JSON_Name7" selected="True" />
+                <SelectField field="JSON_Name8" selected="True" />
+                <SelectField field="Value" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1854" y="281.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[JSON_Name8] = "team.id"
+or [JSON_Name8]='team.name'
+or [JSON_Name6]='shootoutinfo'</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[JSON_Name8] = "team.id"
+or [JSON_Name8]='team.name'
+or [JSON_Name6]='shootoutin...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="2130" y="137.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>Name</Field>
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>Name</RootName>
+              <Delimeters value="_" />
+              <NumFields value="2" />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+            <Position x="2046" y="137.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ErrorWarn>Warn</ErrorWarn>
+              <KeyFields>
+                <Field field="Season" />
+                <Field field="Day No" />
+                <Field field="Game No" />
+                <Field field="GamePk" />
+                <Field field="num" />
+                <Field field="periodType" />
+                <Field field="endTime" />
+                <Field field="startTime" />
+              </KeyFields>
+              <DataFields>
+                <Field field="Season" selected="False" />
+                <Field field="Day No" selected="False" />
+                <Field field="Game No" selected="False" />
+                <Field field="GamePk" selected="False" />
+                <Field field="num" selected="False" />
+                <Field field="periodType" selected="False" />
+                <Field field="away_goals" selected="True" />
+                <Field field="away_rinkSide" selected="True" />
+                <Field field="endTime" selected="False" />
+                <Field field="home_goals" selected="True" />
+                <Field field="home_rinkSide" selected="True" />
+                <Field field="away_shotsOnGoal" selected="True" />
+                <Field field="home_shotsOnGoal" selected="True" />
+                <Field field="startTime" selected="False" />
+                <Field field="*Unknown" selected="True" />
+              </DataFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+        </Node>
+        <Node ToolID="32">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1950" y="138.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Season" selected="True" />
+                <SelectField field="Day No" selected="True" />
+                <SelectField field="Game No" selected="True" />
+                <SelectField field="GamePk" selected="True" />
+                <SelectField field="JSON_Name5" selected="False" />
+                <SelectField field="JSON_Name6" selected="False" />
+                <SelectField field="JSON_Name7" selected="False" />
+                <SelectField field="num" selected="True" />
+                <SelectField field="periodType" selected="True" />
+                <SelectField field="away_goals" selected="True" />
+                <SelectField field="away_rinkSide" selected="True" />
+                <SelectField field="endTime" selected="True" />
+                <SelectField field="home_goals" selected="True" />
+                <SelectField field="home_rinkSide" selected="True" />
+                <SelectField field="away_shotsOnGoal" selected="True" />
+                <SelectField field="home_shotsOnGoal" selected="True" />
+                <SelectField field="ordinalNum" selected="False" />
+                <SelectField field="startTime" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="1854" y="137.9996" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="Season" />
+                <Field field="Day No" />
+                <Field field="Game No" />
+                <Field field="GamePk" />
+                <Field field="JSON_Name5" />
+                <Field field="JSON_Name6" />
+                <Field field="JSON_Name7" />
+              </GroupFields>
+              <HeaderField field="JSON_Name8" />
+              <DataField field="Value" />
+              <Methods>
+                <Method method="Concat" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Season" size="8" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Day No" size="4" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Game No" size="4" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="Formula: if [JSON_Name5]='GamePk' then ..." name="GamePk" size="10" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name5" size="10" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name6" size="30" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name7" size="10" source="CrossTab:Group:Concat:" type="V_WString" />
+                <Field name="away_goals" size="2048" source="CrossTab:Header:JSON_Name8:away.goals:Concat:" type="V_WString" />
+                <Field name="away_rinkSide" size="2048" source="CrossTab:Header:JSON_Name8:away.rinkSide:Concat:" type="V_WString" />
+                <Field name="away_shotsOnGoal" size="2048" source="CrossTab:Header:JSON_Name8:away.shotsOnGoal:Concat:" type="V_WString" />
+                <Field name="endTime" size="2048" source="CrossTab:Header:JSON_Name8:endTime:Concat:" type="V_WString" />
+                <Field name="home_goals" size="2048" source="CrossTab:Header:JSON_Name8:home.goals:Concat:" type="V_WString" />
+                <Field name="home_rinkSide" size="2048" source="CrossTab:Header:JSON_Name8:home.rinkSide:Concat:" type="V_WString" />
+                <Field name="home_shotsOnGoal" size="2048" source="CrossTab:Header:JSON_Name8:home.shotsOnGoal:Concat:" type="V_WString" />
+                <Field name="num" size="2048" source="CrossTab:Header:JSON_Name8:num:Concat:" type="V_WString" />
+                <Field name="ordinalNum" size="2048" source="CrossTab:Header:JSON_Name8:ordinalNum:Concat:" type="V_WString" />
+                <Field name="periodType" size="2048" source="CrossTab:Header:JSON_Name8:periodType:Concat:" type="V_WString" />
+                <Field name="startTime" size="2048" source="CrossTab:Header:JSON_Name8:startTime:Concat:" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Season" order="Asc" />
+                <Field field="Day No" order="Asc" />
+                <Field field="Game No" order="Asc" />
+                <Field field="GamePk" order="Asc" />
+                <Field field="JSON_Name5" order="Asc" />
+                <Field field="JSON_Name6" order="Asc" />
+                <Field field="JSON_Name7" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="59">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2526" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="'5'" field="period" size="1073741823" type="V_WString" />
+                <FormulaField expression="[startTime]" field="endTime" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[period = '5'
+endTime = [startTime]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="60">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+            <Position x="2622" y="282" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ErrorWarn>Warn</ErrorWarn>
+              <KeyFields>
+                <Field field="Season" />
+                <Field field="Day No" />
+                <Field field="Game No" />
+                <Field field="GamePk" />
+                <Field field="Home/Away" />
+                <Field field="team_id" />
+                <Field field="team_name" />
+                <Field field="startTime" />
+                <Field field="period" />
+                <Field field="endTime" />
+              </KeyFields>
+              <DataFields>
+                <Field field="Season" selected="False" />
+                <Field field="Day No" selected="False" />
+                <Field field="Game No" selected="False" />
+                <Field field="GamePk" selected="False" />
+                <Field field="Home/Away" selected="False" />
+                <Field field="team_id" selected="False" />
+                <Field field="team_name" selected="False" />
+                <Field field="attempts" selected="True" />
+                <Field field="SO score" selected="True" />
+                <Field field="startTime" selected="False" />
+                <Field field="period" selected="False" />
+                <Field field="endTime" selected="False" />
+                <Field field="*Unknown" selected="False" />
+              </DataFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+        </Node>
+        <Node ToolID="61">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2718" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Season" selected="True" />
+                <SelectField field="Day No" selected="True" />
+                <SelectField field="Game No" selected="True" />
+                <SelectField field="GamePk" selected="True" />
+                <SelectField field="Home/Away" selected="True" />
+                <SelectField field="team_id" selected="True" />
+                <SelectField field="team_name" selected="True" />
+                <SelectField field="Name" selected="False" rename="Stat Name" />
+                <SelectField field="Value" selected="False" rename="Stat" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="62">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2718" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Season" selected="True" />
+                <SelectField field="Day No" selected="True" />
+                <SelectField field="Game No" selected="True" />
+                <SelectField field="GamePk" selected="True" />
+                <SelectField field="period" selected="True" />
+                <SelectField field="startTime" selected="True" />
+                <SelectField field="endTime" selected="True" />
+                <SelectField field="Home/Away" selected="True" />
+                <SelectField field="team_id" selected="True" />
+                <SelectField field="Name" selected="True" rename="Stat Name" />
+                <SelectField field="Value" selected="True" rename="Stat" />
+                <SelectField field="team_name" selected="True" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="63">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1950" y="282.0003" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if IsNull([JSON_Name8]) then 'startTime'&#xA;else [JSON_Name8] endif" field="JSON_Name8" size="30" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[JSON_Name8 = if IsNull([JSON_Name8]) then 'startTime'
+else [JSON_Name8] endif
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="64">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="2142" y="282.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>!=</Operator>
+                <Field>JSON_Name8</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2020-02-18 23:11:51</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>starttime</Operand>
+                  <StartDate>2020-02-18 23:11:51</StartDate>
+                  <EndDate>2020-02-18 23:11:51</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[JSON_Name8] != "starttime"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="65">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+            <Position x="2334" y="294.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldFind>GamePk</FieldFind>
+              <FieldSearch>GamePk</FieldSearch>
+              <ReplaceFoundField>Day No</ReplaceFoundField>
+              <FindMode>FindAny</FindMode>
+              <NoCase value="False" />
+              <MatchWholeWord value="False" />
+              <ReplaceMode>Append</ReplaceMode>
+              <ReplaceMultipleFound value="True" />
+              <ReplaceAppendFields>
+                <Field field="Value" />
+              </ReplaceAppendFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+        </Node>
+        <Node ToolID="67">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="3006" y="270" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="3198" y="222" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2760_65910325cf58493fba2d2fd4d87d181e_\Engine_12756_e328e675c34b4ff7b1fce07cdbff231d_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="69">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="2814" y="258" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="Season" />
+                <Field field="Day No" />
+                <Field field="Game No" />
+                <Field field="GamePk" />
+                <Field field="Home/Away" />
+                <Field field="team_id" />
+                <Field field="team_name" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="True" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="True" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="False" />
+      <Destination ToolID="24" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Unique" />
+      <Destination ToolID="24" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="False" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="False" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="False" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="True" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="True" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="65" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="False" />
+      <Destination ToolID="65" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="43" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="69" Connection="Unique" />
+      <Destination ToolID="43" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Join" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="43" Connection="Join" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="True" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="69" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="True" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>match results</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
