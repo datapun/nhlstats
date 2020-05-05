@@ -2,3 +2,5 @@
 logos
 #ignore data folder
 data
+#ignore temp files
+*.twbr
