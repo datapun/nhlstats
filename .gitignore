@@ -1,7 +1,5 @@
 #ignore logos folder
 logos
-#ignore data folder
-data
 #ignore temp files
 *.twbr
 #ignore temp Alteryx files
