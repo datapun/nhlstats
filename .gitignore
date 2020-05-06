@@ -1,6 +1,6 @@
 #ignore logos folder
-logos
-#ignore data folder
-data
+logos/
 #ignore temp files
 *.twbr
+#ignore temp Alteryx files
+workflows/*.bak

@@ -1,0 +1,94 @@
+﻿Season,teamid,Team Abbreviation,Team Name,Team Nickname,division_id,division_name,conference_id,conference_name
+20172018,1,NJD,New Jersey Devils,Devils,18,Metropolitan,6,Eastern
+20172018,2,NYI,New York Islanders,Islanders,18,Metropolitan,6,Eastern
+20172018,12,CAR,Carolina Hurricanes,Hurricanes,18,Metropolitan,6,Eastern
+20172018,13,FLA,Florida Panthers,Panthers,17,Atlantic,6,Eastern
+20172018,14,TBL,Tampa Bay Lightning,Lightning,17,Atlantic,6,Eastern
+20172018,15,WSH,Washington Capitals,Capitals,18,Metropolitan,6,Eastern
+20172018,16,CHI,Chicago Blackhawks,Blackhawks,16,Central,5,Western
+20172018,17,DET,Detroit Red Wings,Red Wings,17,Atlantic,6,Eastern
+20172018,18,NSH,Nashville Predators,Predators,16,Central,5,Western
+20172018,19,STL,St. Louis Blues,Blues,16,Central,5,Western
+20172018,20,CGY,Calgary Flames,Flames,15,Pacific,5,Western
+20172018,21,COL,Colorado Avalanche,Avalanche,16,Central,5,Western
+20172018,3,NYR,New York Rangers,Rangers,18,Metropolitan,6,Eastern
+20172018,22,EDM,Edmonton Oilers,Oilers,15,Pacific,5,Western
+20172018,23,VAN,Vancouver Canucks,Canucks,15,Pacific,5,Western
+20172018,24,ANA,Anaheim Ducks,Ducks,15,Pacific,5,Western
+20172018,25,DAL,Dallas Stars,Stars,16,Central,5,Western
+20172018,26,LAK,Los Angeles Kings,Kings,15,Pacific,5,Western
+20172018,28,SJS,San Jose Sharks,Sharks,15,Pacific,5,Western
+20172018,29,CBJ,Columbus Blue Jackets,Blue Jackets,18,Metropolitan,6,Eastern
+20172018,30,MIN,Minnesota Wild,Wild,16,Central,5,Western
+20172018,52,WPG,Winnipeg Jets,Jets,16,Central,5,Western
+20172018,53,ARI,Arizona Coyotes,Coyotes,15,Pacific,5,Western
+20172018,4,PHI,Philadelphia Flyers,Flyers,18,Metropolitan,6,Eastern
+20172018,54,VGK,Vegas Golden Knights,Golden Knights,15,Pacific,5,Western
+20172018,5,PIT,Pittsburgh Penguins,Penguins,18,Metropolitan,6,Eastern
+20172018,6,BOS,Boston Bruins,Bruins,17,Atlantic,6,Eastern
+20172018,7,BUF,Buffalo Sabres,Sabres,17,Atlantic,6,Eastern
+20172018,8,MTL,Montréal Canadiens,Canadiens,17,Atlantic,6,Eastern
+20172018,9,OTT,Ottawa Senators,Senators,17,Atlantic,6,Eastern
+20172018,10,TOR,Toronto Maple Leafs,Maple Leafs,17,Atlantic,6,Eastern
+20182019,1,NJD,New Jersey Devils,Devils,18,Metropolitan,6,Eastern
+20182019,2,NYI,New York Islanders,Islanders,18,Metropolitan,6,Eastern
+20182019,12,CAR,Carolina Hurricanes,Hurricanes,18,Metropolitan,6,Eastern
+20182019,13,FLA,Florida Panthers,Panthers,17,Atlantic,6,Eastern
+20182019,14,TBL,Tampa Bay Lightning,Lightning,17,Atlantic,6,Eastern
+20182019,15,WSH,Washington Capitals,Capitals,18,Metropolitan,6,Eastern
+20182019,16,CHI,Chicago Blackhawks,Blackhawks,16,Central,5,Western
+20182019,17,DET,Detroit Red Wings,Red Wings,17,Atlantic,6,Eastern
+20182019,18,NSH,Nashville Predators,Predators,16,Central,5,Western
+20182019,19,STL,St. Louis Blues,Blues,16,Central,5,Western
+20182019,20,CGY,Calgary Flames,Flames,15,Pacific,5,Western
+20182019,21,COL,Colorado Avalanche,Avalanche,16,Central,5,Western
+20182019,3,NYR,New York Rangers,Rangers,18,Metropolitan,6,Eastern
+20182019,22,EDM,Edmonton Oilers,Oilers,15,Pacific,5,Western
+20182019,23,VAN,Vancouver Canucks,Canucks,15,Pacific,5,Western
+20182019,24,ANA,Anaheim Ducks,Ducks,15,Pacific,5,Western
+20182019,25,DAL,Dallas Stars,Stars,16,Central,5,Western
+20182019,26,LAK,Los Angeles Kings,Kings,15,Pacific,5,Western
+20182019,28,SJS,San Jose Sharks,Sharks,15,Pacific,5,Western
+20182019,29,CBJ,Columbus Blue Jackets,Blue Jackets,18,Metropolitan,6,Eastern
+20182019,30,MIN,Minnesota Wild,Wild,16,Central,5,Western
+20182019,52,WPG,Winnipeg Jets,Jets,16,Central,5,Western
+20182019,53,ARI,Arizona Coyotes,Coyotes,15,Pacific,5,Western
+20182019,4,PHI,Philadelphia Flyers,Flyers,18,Metropolitan,6,Eastern
+20182019,54,VGK,Vegas Golden Knights,Golden Knights,15,Pacific,5,Western
+20182019,5,PIT,Pittsburgh Penguins,Penguins,18,Metropolitan,6,Eastern
+20182019,6,BOS,Boston Bruins,Bruins,17,Atlantic,6,Eastern
+20182019,7,BUF,Buffalo Sabres,Sabres,17,Atlantic,6,Eastern
+20182019,8,MTL,Montréal Canadiens,Canadiens,17,Atlantic,6,Eastern
+20182019,9,OTT,Ottawa Senators,Senators,17,Atlantic,6,Eastern
+20182019,10,TOR,Toronto Maple Leafs,Maple Leafs,17,Atlantic,6,Eastern
+20192020,1,NJD,New Jersey Devils,Devils,18,Metropolitan,6,Eastern
+20192020,2,NYI,New York Islanders,Islanders,18,Metropolitan,6,Eastern
+20192020,12,CAR,Carolina Hurricanes,Hurricanes,18,Metropolitan,6,Eastern
+20192020,13,FLA,Florida Panthers,Panthers,17,Atlantic,6,Eastern
+20192020,14,TBL,Tampa Bay Lightning,Lightning,17,Atlantic,6,Eastern
+20192020,15,WSH,Washington Capitals,Capitals,18,Metropolitan,6,Eastern
+20192020,16,CHI,Chicago Blackhawks,Blackhawks,16,Central,5,Western
+20192020,17,DET,Detroit Red Wings,Red Wings,17,Atlantic,6,Eastern
+20192020,18,NSH,Nashville Predators,Predators,16,Central,5,Western
+20192020,19,STL,St. Louis Blues,Blues,16,Central,5,Western
+20192020,20,CGY,Calgary Flames,Flames,15,Pacific,5,Western
+20192020,21,COL,Colorado Avalanche,Avalanche,16,Central,5,Western
+20192020,3,NYR,New York Rangers,Rangers,18,Metropolitan,6,Eastern
+20192020,22,EDM,Edmonton Oilers,Oilers,15,Pacific,5,Western
+20192020,23,VAN,Vancouver Canucks,Canucks,15,Pacific,5,Western
+20192020,24,ANA,Anaheim Ducks,Ducks,15,Pacific,5,Western
+20192020,25,DAL,Dallas Stars,Stars,16,Central,5,Western
+20192020,26,LAK,Los Angeles Kings,Kings,15,Pacific,5,Western
+20192020,28,SJS,San Jose Sharks,Sharks,15,Pacific,5,Western
+20192020,29,CBJ,Columbus Blue Jackets,Blue Jackets,18,Metropolitan,6,Eastern
+20192020,30,MIN,Minnesota Wild,Wild,16,Central,5,Western
+20192020,52,WPG,Winnipeg Jets,Jets,16,Central,5,Western
+20192020,53,ARI,Arizona Coyotes,Coyotes,15,Pacific,5,Western
+20192020,4,PHI,Philadelphia Flyers,Flyers,18,Metropolitan,6,Eastern
+20192020,54,VGK,Vegas Golden Knights,Golden Knights,15,Pacific,5,Western
+20192020,5,PIT,Pittsburgh Penguins,Penguins,18,Metropolitan,6,Eastern
+20192020,6,BOS,Boston Bruins,Bruins,17,Atlantic,6,Eastern
+20192020,7,BUF,Buffalo Sabres,Sabres,17,Atlantic,6,Eastern
+20192020,8,MTL,Montréal Canadiens,Canadiens,17,Atlantic,6,Eastern
+20192020,9,OTT,Ottawa Senators,Senators,17,Atlantic,6,Eastern
+20192020,10,TOR,Toronto Maple Leafs,Maple Leafs,17,Atlantic,6,Eastern
