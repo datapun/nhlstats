@@ -4,3 +4,5 @@ logos
 data
 #ignore temp files
 *.twbr
+#ignore temp Alteryx files
+workflows/*.bak
